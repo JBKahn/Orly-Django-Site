@@ -19,7 +19,7 @@ class BridalPortfolio(models.Model):
             return
 
         # Set our max thumbnail size in a tuple (max width, max height)
-        THUMBNAIL_SIZE = (120, 120)
+        THUMBNAIL_SIZE = self.calculateMaxDimensions(self.imgfile.height, self.imgfile.width)
 
         DJANGO_TYPE = self.imgfile.file.content_type
 
@@ -43,6 +43,10 @@ class BridalPortfolio(models.Model):
 
         suf = SimpleUploadedFile(os.path.split(self.imgfile.name)[-1], temp_handle.read(), content_type=DJANGO_TYPE)
         self.thumbnail.save('%s_thumbnail.%s' % (os.path.splitext(suf.name)[0], FILE_EXTENSION), suf, save=False)
+
+    def calculateMaxDimensions(self, height, width):
+        height_to_width_ratio = height / float(width)
+        return (120 / height_to_width_ratio, 120)
 
     def save(self):
         self.create_thumbnail()
