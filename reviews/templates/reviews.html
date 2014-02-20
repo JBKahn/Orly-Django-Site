@@ -4,6 +4,14 @@
   {{ block.super }}
   <div class="site">
     <div class="content">
+
+    {% if form %}
+      <form method='POST'>{% csrf_token %}
+        {{form.as_p}}
+        <button type="submit" name="btnform1">Submit</button>
+      </form>
+    {% endif %}
+
       {% for review in reviews %}
         <div class="review">
           <p>{{ review.text | safe }}</p>
