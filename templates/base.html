@@ -1,0 +1,26 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Orly Kahn-Waldman Makeup Artist</title>
+    <script type="text/JavaScript" src="{% static "js/app.dist.js" %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static "css/style.dist.css" %}">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Oranienbaum">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Alex+Brush">
+    {% block body %}
+    <body>
+      <div class="site">
+        <div class="header">
+          <h1 class="name">Orly Kahn-Waldman</h1>
+          <h2 class="job">Makeup Artist</h2>
+          <div class="navigation">
+            {% for page in pages %}
+              <a href="{{ page.path }}" class="btn {% if page.name == current_page_name %}active{% endif %}">{{ page.name }}</a>
+            {% endfor%}
+          </div>
+        </div>
+      </div>
+    </body>
+    {% endblock %}
+  </head>
+</html>

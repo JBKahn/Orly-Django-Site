@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block body %}
+  {{ block.super }}
+  <div class="site">
+    <div class="content">
+      {% for review in reviews %}
+        <div class="review">
+          <p>{{ review.text | safe }}</p>
+          {% if review.author %}
+            <p>– {{ review.author }}</p>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

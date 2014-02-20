@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block body %}
+  {{ block.super }}
+
+  <div class="site">
+    <div class="content"><img src="{% static "img/orly.jpg" %}" alt="" class="orly">
+      <div class="about">
+        <h3>Name</h3>
+        <p>Orly Kahn-Waldman</p>
+      </div>
+      <div class="about">
+        <h3>About</h3>
+        <p>Certified Makeup Artist with work featured on Breakfast Television and at various bridal shows across the GTA.</p>
+        <p>Available to travel to all areas surrounding the GTA (Brampton, Newmarket, Aurora, Thornhill, Mississauga, Richmond Hill, Etobicoke, Milton, Vaughan...)</p>
+        <p>(Hair stylists are available upon request for a special rate)</p>
+      </div>
+    </div>
+  </div>
+{% endblock %}
