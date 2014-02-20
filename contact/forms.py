@@ -1,13 +1,15 @@
 from django import forms
 from django.core.mail import send_mail
 from django.conf import settings
+from localflavor.ca import forms as CAFormFields
 
 
 class ContactForm(forms.Form):
     email_address = forms.EmailField()
     first_name = forms.CharField(max_length=20)
     last_name = forms.CharField(max_length=20)
-    phone_number = forms.CharField(max_length=20)
+    phone_number = CAFormFields.CAPhoneNumberField()
+    ext = forms.IntegerField()
     message = forms.CharField()
 
     def send_email(self):
