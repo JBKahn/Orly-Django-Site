@@ -1,11 +1,21 @@
-from django.views.generic import TemplateView
+from django.views.generic.edit import FormView
+from portfolio.forms import PortfolioForm
+from portfolio.models import BridalPortfolio
+from django.core.urlresolvers import reverse_lazy
 
 
-class PortfolioView(TemplateView):
+class PortfolioView(FormView):
     template_name = 'portfolio.html'
+    form_class = PortfolioForm
+    success_url = reverse_lazy('portfolio:portfolio')
+
+    def form_valid(self, form):
+        newimg = BridalPortfolio(imgfile=self.request.FILES['imgfile'])
+        newimg.save()
+        return super(PortfolioView, self).form_valid(form)
 
     def get_context_data(self, **kwargs):
-        return {"current_page_name": "Bridal Portfolio", "images": self.get_images()}
+        return {"current_page_name": "Bridal Portfolio", "images": self.get_images(), "form": PortfolioForm(), 'uploaded': BridalPortfolio.objects.all()}
 
     def get_images(self):
         return [
