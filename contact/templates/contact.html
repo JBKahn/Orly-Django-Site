@@ -2,10 +2,8 @@
 
 {% block body %}
   {{ block.super }}
-
-  <div class="site">
-    <div class="content">
-      <iframe src="http://www.vcita.com/widgets/contact_form/7a31f847263bdfb7?ver=2" width="100%" height="480" scrolling="no" frameborder="0" style=""></iframe>
-    </div>
-  </div>
+  <form method='POST'>{% csrf_token %}
+    {{form.as_p}}
+    <button type="submit" name="btnform1">Submit</button>
+  </form>
 {% endblock %}
