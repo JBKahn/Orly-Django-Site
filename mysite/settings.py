@@ -29,6 +29,14 @@ TEMPLATE_DEBUG = True
 ALLOWED_HOSTS = []
 
 
+# Email
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'orlykahnmakeupartist@gmail.com'
+EMAIL_HOST_PASSWORD = 'testpassword'
+DEFAULT_FROM_EMAIL = 'orlykahnmakeupartist@gmail.com'
+
 # Application definition
 
 INSTALLED_APPS = (
