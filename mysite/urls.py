@@ -13,4 +13,5 @@ urlpatterns = patterns('',
     url(r'^contact/', include('contact.urls', namespace="contact")),
     url(r'^community/', include('community.urls', namespace="community")),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^grappelli/', include('grappelli.urls')),
 )

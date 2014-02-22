@@ -40,6 +40,7 @@ DEFAULT_FROM_EMAIL = 'orlykahnmakeupartist@gmail.com'
 # Application definition
 
 INSTALLED_APPS = (
+    'grappelli',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -68,6 +69,7 @@ MIDDLEWARE_CLASSES = (
 
 TEMPLATE_CONTEXT_PROCESSORS += (
     "mysite.context_processors.navigation",
+    "django.core.context_processors.request",
 )
 
 ROOT_URLCONF = 'mysite.urls'
@@ -104,3 +106,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = ['static']
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+)
+
+GRAPPELLI_ADMIN_TITLE = 'Orly Kahn Makeup Artist Admin'

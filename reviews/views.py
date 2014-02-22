@@ -20,7 +20,7 @@ class AddReviewView(FormView):
         return super(AddReviewView, self).form_valid(form)
 
     def get_reviews(self):
-        return [{'text': review.text, 'author': review.name} for review in ClientReview.objects.all()]
+        return [{'text': review.text, 'author': review.name} for review in ClientReview.objects.order_by('position').all()]
 
 
 class ReviewView(TemplateView):
@@ -30,4 +30,4 @@ class ReviewView(TemplateView):
         return {"current_page_name": "Reviews", "reviews": self.get_reviews()}
 
     def get_reviews(self):
-        return [{'text': review.text, 'author': review.name} for review in ClientReview.objects.all()]
+        return [{'text': review.text, 'author': review.name} for review in ClientReview.objects.order_by('position').all()]

@@ -1,12 +1,5 @@
 {% extends "base.html" %}
 {% block body %}
   {{ block.super }}
-  {% if form %}
-    <form enctype="multipart/form-data" method='POST'>{% csrf_token %}
-      {{form.as_p}}
-      <button type="submit" name="btnform1">Submit</button>
-    </form>
-  {% endif %}
-
   {% include "gallery.html" %}
 {% endblock %}

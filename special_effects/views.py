@@ -1,4 +1,5 @@
 from django.views.generic import TemplateView
+from special_effects.models import SpecialEffects
 
 
 class FXPortfolioView(TemplateView):
@@ -8,11 +9,4 @@ class FXPortfolioView(TemplateView):
         return {"current_page_name": "FX Portfolio", "images": self.get_images()}
 
     def get_images(self):
-        return [
-            {"big_path": "img/se1big.jpeg", "small_path": "img/se1.jpeg", "title": "test_title"},
-            {"big_path": "img/se2big.jpeg", "small_path": "img/se2.jpeg", "title": "test_title"},
-            {"big_path": "img/se3big.jpeg", "small_path": "img/se3.jpeg", "title": "test_title"},
-            {"big_path": "img/se4big.jpeg", "small_path": "img/se4.jpeg", "title": "test_title"},
-            {"big_path": "img/se5big.jpeg", "small_path": "img/se5.jpeg", "title": "test_title"},
-            {"big_path": "img/se6big.jpeg", "small_path": "img/se6.jpeg", "title": "test_title"},
-        ]
+        return [{"big_path": ('/').join(piece.imgfile.name.split('/')[-2:]), "small_path": ('/').join(piece.thumbnail.name.split('/')[-2:]), "title": piece.title or ' '} for piece in SpecialEffects.objects.order_by('position').all()]

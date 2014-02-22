@@ -6,8 +6,18 @@ import os
 
 
 class BridalPortfolio(models.Model):
+    title = models.CharField(max_length=50, null=False, blank=True)
     imgfile = models.ImageField(upload_to='portfolio/static/img')
     thumbnail = models.ImageField(upload_to='portfolio/static/img', max_length=500, blank=True, null=True)
+    position = models.PositiveSmallIntegerField("Position")
+
+    class Meta:
+        ordering = ['position']
+
+    def format_thumbnail(self):
+        # import ipdb; ipdb.set_trace();
+        return u'<img src="/%s" />' % '/'.join(self.thumbnail.url.split('/')[1:])
+    format_thumbnail.allow_tags = True
 
     def create_thumbnail(self):
         # original code for this method came from
@@ -49,5 +59,15 @@ class BridalPortfolio(models.Model):
         return (120 / height_to_width_ratio, 120)
 
     def save(self):
-        self.create_thumbnail()
+        if not self.thumbnail:
+            self.create_thumbnail()
+        if self.position is None:
+            # Append
+            try:
+                last = self.__class__.objects.order_by('-position')[0]
+                self.position = last.position + 1
+            except IndexError:
+                # First row
+                self.position = 0
+
         super(BridalPortfolio, self).save()
