@@ -2,3 +2,4 @@ django==1.6.1
 django-localflavor==1.0
 south==0.8.4
 django-grappelli==2.5.2
+djangorestframework==2.3.12

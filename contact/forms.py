@@ -5,14 +5,22 @@ from localflavor.ca import forms as CAFormFields
 
 
 class ContactForm(forms.Form):
-    email_address = forms.EmailField()
+    email = forms.EmailField()
     first_name = forms.CharField(max_length=20)
     last_name = forms.CharField(max_length=20)
-    phone_number = CAFormFields.CAPhoneNumberField()
-    ext = forms.IntegerField()
+    phone_number = forms.CharField(max_length=20)
     message = forms.CharField()
 
     def send_email(self):
         form_data = self.cleaned_data
         # send email using the self.cleaned_data dictionary
-        send_mail('Website Contact Form from ' + form_data.get('first_name') + ' ' + form_data.get('last_name') + ' ' + form_data.get('phone_number') + " " + form_data.get('email_address'), form_data.get('message'), settings.EMAIL_HOST_USER, ['josephbkahn@gmail.com'], fail_silently=False)
+        send_mail(
+            subject='Website Contact Form',
+            message=self.format_email(form_data),
+            from_email=settings.EMAIL_HOST_USER,
+            recipient_list=['josephbkahn@gmail.com'],
+            fail_silently=False
+        )
+
+    def format_email(self, data):
+       return "Name: {first_name} {last_name}\nEmail: {email}\nPhone Number: {phone_number}\nMessage: {message}".format(**data)

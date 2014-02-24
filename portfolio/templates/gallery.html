@@ -1,5 +1,4 @@
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static "css/blueimp-gallery.min.css" %}">
 <div class="site">
   <div class="content">
     <!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body-->
@@ -26,10 +25,10 @@
         </div>
       </div>
     </div>
-    <div id="links">
+    <div id="links" class="js-masonry" data-masonry-options='{ "itemSelector": ".gallery-image", "columnWidth": 233 }'>
       {% for image in images %}
         <a href="{% static image.big_path %}" title="{{ image.title }}" data-gallery="data-gallery">
-          <img src="{% static image.small_path %}" alt="{{ image.title }}">
+          <img src="{% static image.small_path %}" class="gallery-image" alt="{{ image.title }}">
         </a>
       {% endfor %}
     </div>

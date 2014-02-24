@@ -1,25 +1,26 @@
-from django.core.urlresolvers import reverse_lazy
 from django.views.generic import TemplateView
-from django.views.generic.edit import FormView
+from rest_framework import generics
+from rest_framework.response import Response
 
+from contact.serializers import ContactSerializer
 from contact.forms import ContactForm
 
 
-class ContactFormView(FormView):
+class ContactFormView(TemplateView):
     template_name = 'contact.html'
-    form_class = ContactForm
-    success_url = reverse_lazy('contact:form_submit')
-
-    def get_context_data(self, **kwargs):
-        return {"current_page_name": "Contact", "form": ContactForm()}
-
-    def form_valid(self, form):
-        form.send_email()
-        return super(ContactFormView, self).form_valid(form)
-
-
-class ContactFormViewSubmit(TemplateView):
-    template_name = 'success.html'
 
     def get_context_data(self, **kwargs):
         return {"current_page_name": "Contact"}
+
+
+class ContactFormViewSubmit(generics.CreateAPIView):
+
+    def post(self, request, *args, **kwargs):
+        form_data = ContactSerializer(self.request.DATA).data
+        form = ContactForm(form_data)
+        if form.is_valid():
+            form.send_email()
+            return Response({}, status=200)
+        else:
+            return Response({"errors": form.errors}, status=422)
+

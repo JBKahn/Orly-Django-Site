@@ -4,13 +4,27 @@
   {{ block.super }}
   <div class="site">
     <div class="content">
-
-    {% if form %}
-      <form method='POST'>{% csrf_token %}
-        {{form.as_p}}
-        <button type="submit" name="btnform1">Submit</button>
-      </form>
-    {% endif %}
+      <div class="review">
+        <form action="#" onsubmit="submitForm();return false" class="form-horizontal">
+          <div class="form-group">
+            <label for="id_name" class="col-sm-2 control-label">Name:</label>
+            <div class="col-sm-10">
+              <input id="id_name" class="form-control" maxlength="20" name="name" type="text">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="id_text" class="col-sm-2 control-label">Text:</label>
+            <div class="col-sm-10">
+              <textarea cols="40" id="id_text" class="form-control" name="message" rows="10" style="resize:none;"></textarea>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-default">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
 
       {% for review in reviews %}
         <div class="review">
@@ -22,4 +36,33 @@
       {% endfor %}
     </div>
   </div>
+
+  <script type="text/javascript">
+    $("body").bind("ajaxSend", function(elm, xhr, s){
+       if (s.type == "POST") {
+          xhr.setRequestHeader('X-CSRF-Token', "{% csrf_token %}");
+       }
+    });
+    function submitForm() {
+      $('.has-error').removeClass('has-error');
+      $.ajax({
+        url: '{% url "reviews:form_submit" %}',
+        type: 'POST',
+        data: {
+            name: $('#id_name').val(),
+            text: $('#id_text').val(),
+        },
+        dataType: 'json'
+      }).fail(function (data, textStatus, jqXHR) {
+            for (var key in data.responseJSON) {
+               $('#id_' + key).parent().addClass('has-error');
+            }
+      }).done(function (data, textStatus, jqXHR) {
+            var review = $('#id_text').val();
+            var author = $('#id_name').val();
+            $('.form-horizontal').before("<p>" + review + "</p>" + ((author != "") ? ("<p>– " + author + "</p>") : ''));
+            $('.form-horizontal').remove();
+      });
+    }
+  </script>
 {% endblock %}

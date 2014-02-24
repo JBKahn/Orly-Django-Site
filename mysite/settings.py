@@ -48,6 +48,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'south',
+    'rest_framework',
     'home',
     'portfolio',
     'reviews',
@@ -113,3 +114,7 @@ STATICFILES_FINDERS = (
 )
 
 GRAPPELLI_ADMIN_TITLE = 'Orly Kahn Makeup Artist Admin'
+
+
+# debug
+DEBUG = True
