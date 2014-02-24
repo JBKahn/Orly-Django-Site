@@ -49,6 +49,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'south',
     'rest_framework',
+    'django_extensions',
     'home',
     'portfolio',
     'reviews',
