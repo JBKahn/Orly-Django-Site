@@ -1,52 +1,101 @@
 {% extends "base.html" %}
 
 {% block body %}
+  <script src="http://cdn.jsdelivr.net/bootstrap.datepicker/0.1/js/bootstrap-datepicker.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="http://cdn.jsdelivr.net/bootstrap.datepicker/0.1/css/datepicker.css">
   {{ block.super }}
   <div class="site">
-    <form action="#" onsubmit="submitForm();return false" class="form-horizontal">
-      <div class="form-group">
-        <label for="id_email" class="col-sm-2 control-label">Email address:</label>
-        <div class="col-sm-10">
-          <input id="id_email" class="form-control" name="email_address" type="email">
+    <div class="content">
+      <form action="#" onsubmit="submitForm();return false" class="form-horizontal">
+        <div class="form-group">
+          <label for="id_first_name" class="col-sm-2 control-label">First name:</label>
+          <div class="col-sm-10">
+            <input id="id_first_name" class="form-control" maxlength="20" name="first_name" type="text">
+          </div>
         </div>
-      </div>
-      <div class="form-group">
-        <label for="id_first_name" class="col-sm-2 control-label">First name:</label>
-        <div class="col-sm-10">
-          <input id="id_first_name" class="form-control" maxlength="20" name="first_name" type="text">
+        <div class="form-group">
+          <label for="id_last_name" class="col-sm-2 control-label">Last name:</label>
+          <div class="col-sm-10">
+            <input id="id_last_name" class="form-control" maxlength="20" name="last_name" type="text">
+          </div>
         </div>
-      </div>
-      <div class="form-group">
-        <label for="id_last_name" class="col-sm-2 control-label">Last name:</label>
-        <div class="col-sm-10">
-          <input id="id_last_name" class="form-control" maxlength="20" name="last_name" type="text">
+        <div class="form-group">
+          <label for="id_email" class="col-sm-2 control-label">Email address:</label>
+          <div class="col-sm-10">
+            <input id="id_email" class="form-control" name="email_address" type="email">
+          </div>
         </div>
-      </div>
-      <div class="form-group">
-        <label for="id_phone_number" class="col-sm-2 control-label">Phone number:</label>
-        <div class="col-sm-10">
-          <input id="id_phone_number" class="form-control" name="phone_number" type="text">
+        <div class="form-group">
+          <label for="id_phone_number" class="col-sm-2 control-label">Phone number:</label>
+          <div class="col-sm-10">
+            <input id="id_phone_number" class="form-control" name="phone_number" type="text">
+          </div>
         </div>
-      </div>
-      <div class="form-group">
-        <label for="id_message" class="col-sm-2 control-label">Message:</label>
-        <div class="col-sm-10">
-          <textarea cols="40" id="id_message" class="form-control" name="message" rows="10" style="resize:none;"></textarea>
+        <div class="form-group">
+          <label for="id_date" class="col-sm-2 control-label">Date of Event:</label>
+          <div class="col-sm-10">
+            <div id="dp6" data-date="12-02-2012" data-date-format="dd-mm-yyyy"></div>
+            <input id="id_date" class="form-control" name="date" type="text">
+          </div>
         </div>
-      </div>
-      <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-          <button type="submit" class="btn btn-default">Submit</button>
+        <div class="form-group">
+          <label for="id_head_count" class="col-sm-2 control-label">Number of Individuals:</label>
+          <div class="col-sm-10">
+            <input id="id_head_count" class="form-control" name="head_count" type="text">
+          </div>
         </div>
-      </div>
-    </form>
+        <div class="form-group">
+          <label for="id_location" class="col-sm-2 control-label">Location:</label>
+          <div class="col-sm-10">
+            <input id="id_location" class="form-control" name="location" type="text">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="id_additional_info" class="col-sm-2 control-label">Additional Information:</label>
+          <div class="col-sm-10">
+            <textarea cols="40" id="id_additional_info" class="form-control" name="additional_information" rows="10" style="resize:none;"></textarea>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
   </div>
 
   <script type="text/javascript">
-    $("body").bind("ajaxSend", function(elm, xhr, s){
-       if (s.type == "POST") {
-          xhr.setRequestHeader('X-CSRF-Token', "{% csrf_token %}");
-       }
+  $('#id_date').datepicker()
+  // using jQuery
+  function getCookie(name) {
+      var cookieValue = null;
+      if (document.cookie && document.cookie != '') {
+          var cookies = document.cookie.split(';');
+          for (var i = 0; i < cookies.length; i++) {
+              var cookie = jQuery.trim(cookies[i]);
+              // Does this cookie string begin with the name we want?
+              if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                  cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                  break;
+              }
+          }
+      }
+      return cookieValue;
+  }
+  var csrftoken = getCookie('csrftoken');
+
+    function csrfSafeMethod(method) {
+        // these HTTP methods do not require CSRF protection
+        return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+    }
+    $.ajaxSetup({
+        crossDomain: false, // obviates need for sameOrigin test
+        beforeSend: function(xhr, settings) {
+            if (!csrfSafeMethod(settings.type)) {
+                xhr.setRequestHeader("X-CSRFToken", csrftoken);
+            }
+        }
     });
     function submitForm() {
       $('.has-error').removeClass('has-error');
@@ -56,9 +105,12 @@
         data: {
             first_name: $('#id_first_name').val(),
             last_name: $('#id_last_name').val(),
-            message: $('#id_message').val(),
             email: $('#id_email').val(),
             phone_number: $('#id_phone_number').val(),
+            date: $('#id_date').val(),
+            head_count: $('#id_head_count').val(),
+            location: $('#id_location').val(),
+            additional_info: $('#id_additional_info').val(),
         },
         dataType: 'json'
       }).fail(function (data, textStatus, jqXHR) {
