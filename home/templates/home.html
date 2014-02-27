@@ -4,6 +4,39 @@
 {% block body %}
   {{ block.super }}
   <div class="site">
-    <div class="content"><img src="{% static "img/home_page_makeup.png" %}" alt="Applying Makeup" width="695" height="520" class="home"></div>
+    <div class="content">
+        <img src="{% static "img/home_page_makeup.png" %}" alt="Applying Makeup" width="695" height="520" class="home">
+        <div class="review" style="
+            margin: 15px 0;border:none;background:none;height:150px;
+        "><img src="/static/img/face.png" alt="Applying Makeup" class="" style="
+            /* background-color: red; */
+            border-radius: 100%;
+            float: left;
+            position: relative;
+            top: 0px;
+            height: 80%;
+            width: 14%;
+        "><p style="
+            font-style: italic;
+            font-size: 20px;
+            width: 376px;
+            margin-left: 103px;
+        ">Orly is amazing!! Your makeup skills are out of this world. You helped make my day special and for that I am so greatful!!</p>
+        <p style="
+            font-style: italic;
+            font-size: 20px;
+            width: 60px;
+            margin-left: 103px;
+        ">- Orly</p>
+        <p style="
+            font-style: italic;
+            font-size: 20px;
+            width: 152px;
+            margin-left: 103px;
+            position: relative;
+            left: 408px;
+            top: -136px;
+        "><button type="submit" class="btn btn-default">Contact Me Today!</button>to book your trial and prepare for your special day!</p></div>
+    </div>
   </div>
 {% endblock %}

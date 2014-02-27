@@ -25,10 +25,10 @@
         </div>
       </div>
     </div>
-    <div id="links" class="js-masonry" data-masonry-options='{ "itemSelector": ".gallery-image", "columnWidth": 233 }'>
+    <div id="links" class="js-masonry" data-masonry-options='{ "itemSelector": ".gallery-image", "columnWidth": 200, "gutter": 15 }'>
       {% for image in images %}
         <a href="{% static image.big_path %}" title="{{ image.title }}" data-gallery="data-gallery">
-          <img src="{% static image.small_path %}" class="gallery-image" alt="{{ image.title }}">
+          <img src="{% static image.small_path %}" class="gallery-image" alt="{{ image.title }}" width="200px" style="margin-bottom: 10px;">
         </a>
       {% endfor %}
     </div>

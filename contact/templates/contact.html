@@ -3,43 +3,45 @@
 {% block body %}
   {{ block.super }}
   <div class="site">
-    <form action="#" onsubmit="submitForm();return false" class="form-horizontal">
-      <div class="form-group">
-        <label for="id_email" class="col-sm-2 control-label">Email address:</label>
-        <div class="col-sm-10">
-          <input id="id_email" class="form-control" name="email_address" type="email">
+    <div class="content">
+      <form action="#" onsubmit="submitForm();return false" class="form-horizontal">
+        <div class="form-group">
+          <label for="id_email" class="col-sm-2 control-label">Email address:</label>
+          <div class="col-sm-10">
+            <input id="id_email" class="form-control" name="email_address" type="email">
+          </div>
         </div>
-      </div>
-      <div class="form-group">
-        <label for="id_first_name" class="col-sm-2 control-label">First name:</label>
-        <div class="col-sm-10">
-          <input id="id_first_name" class="form-control" maxlength="20" name="first_name" type="text">
+        <div class="form-group">
+          <label for="id_first_name" class="col-sm-2 control-label">First name:</label>
+          <div class="col-sm-10">
+            <input id="id_first_name" class="form-control" maxlength="20" name="first_name" type="text">
+          </div>
         </div>
-      </div>
-      <div class="form-group">
-        <label for="id_last_name" class="col-sm-2 control-label">Last name:</label>
-        <div class="col-sm-10">
-          <input id="id_last_name" class="form-control" maxlength="20" name="last_name" type="text">
+        <div class="form-group">
+          <label for="id_last_name" class="col-sm-2 control-label">Last name:</label>
+          <div class="col-sm-10">
+            <input id="id_last_name" class="form-control" maxlength="20" name="last_name" type="text">
+          </div>
         </div>
-      </div>
-      <div class="form-group">
-        <label for="id_phone_number" class="col-sm-2 control-label">Phone number:</label>
-        <div class="col-sm-10">
-          <input id="id_phone_number" class="form-control" name="phone_number" type="text">
+        <div class="form-group">
+          <label for="id_phone_number" class="col-sm-2 control-label">Phone number:</label>
+          <div class="col-sm-10">
+            <input id="id_phone_number" class="form-control" name="phone_number" type="text">
+          </div>
         </div>
-      </div>
-      <div class="form-group">
-        <label for="id_message" class="col-sm-2 control-label">Message:</label>
-        <div class="col-sm-10">
-          <textarea cols="40" id="id_message" class="form-control" name="message" rows="10" style="resize:none;"></textarea>
+        <div class="form-group">
+          <label for="id_message" class="col-sm-2 control-label">Message:</label>
+          <div class="col-sm-10">
+            <textarea cols="40" id="id_message" class="form-control" name="message" rows="10" style="resize:none;"></textarea>
+          </div>
         </div>
-      </div>
-      <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-          <button type="submit" class="btn btn-default">Submit</button>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default">Submit</button>
+          </div>
         </div>
-      </div>
-    </form>
+      </form>
+    </div>
   </div>
 
   <script type="text/javascript">

@@ -28,7 +28,16 @@
 
       {% for review in reviews %}
         <div class="review">
-          <p>{{ review.text | safe }}</p>
+          <img src="/static/img/face.png" alt="Applying Makeup" class="" style="
+            /* background-color: red; */
+            border-radius: 100%;
+            float: left;
+            position: relative;
+            top: 0px;
+            height: 80%;
+            width: 14%;
+          ">
+          <p style="margin-left:98px;">{{ review.text | safe }}</p>
           {% if review.author %}
             <p>– {{ review.author }}</p>
           {% endif %}
