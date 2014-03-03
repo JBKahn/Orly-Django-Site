@@ -1,0 +1,124 @@
+.site {
+    max-width: 1000px;
+    margin: auto;
+    background-color: white;
+    color: #57534a;
+}
+
+.header {
+    margin-top: 10px;
+    h1.name {
+        font-family: 'Alex Brush', serif;
+        text-align: center;
+        margin: auto;
+    }
+    h2.job   {
+        font-family: 'Oranienbaum', serif;
+        text-align: center;
+        margin: auto;
+        font-variant: small-caps;
+    }
+    .navigation {
+        width: 75%;
+        margin: 0 auto 20px;
+        a {
+            font-variant: small-caps;
+        }
+        .btn {
+            color: #57534a;
+            font-weight: 900;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+.content {
+    width: 70%;
+    margin: auto;
+    img.home {
+        width: 100%;
+        height: auto;
+   }
+   padding-bottom: 50px;
+}
+.review {
+    padding: 25px 20px 10px 20px;
+    margin: 20px 30px 30px 30px;
+    background: #eee;
+    border-left: 5px solid #57534a;
+    p:first-child:before {
+        content: "\"";
+        margin-right: 5px;
+        font-size: 20px;
+    }
+    p:first-child:after {
+        content: "\"";
+        font-size: 20px;
+    }
+    a {
+        color: #57534a;
+        text-decoration: underline;
+    }
+}
+.about {
+    p {
+        margin-left: 15px;
+    }
+}
+
+.orly {
+    float: right;
+}
+
+.section-submissions {
+    .cm_gray_top {
+        display: none;
+    }
+}
+
+.stupid-badges{
+    height: 10pc;
+    width: 100%;
+    a {
+        float: left;
+        margin-right: 1.93%;
+    }
+    &:first-child {
+        margin-left: 1.93%;
+    }
+}
+.after-float {
+    clear: both;
+}
+
+.wedding_wire-couples_choice {
+    background: url('../img/orly_awards.png') no-repeat;
+    height: 158px;
+    width: 158px;
+    display: block;
+    background-position-x: -171px;
+}
+
+.wedding_wire-brides_choice {
+    background: url('../img/orly_awards.png') no-repeat;
+    height: 158px;
+    width: 158px;
+    display: block;
+}
+
+.wedding_wire-rated {
+    background: url('../img/orly_awards.png') no-repeat;
+    height: 158px;
+    width: 158px;
+    display: block;
+    background-position-x: -335px;
+}
+
+.weddingful-featured {
+    background: url('../img/orly_awards.png') no-repeat;
+    height: 158px;
+    width: 158px;
+    display: block;
+    background-position-x: -497px;
+}

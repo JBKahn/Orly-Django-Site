@@ -1,0 +1,22 @@
+doctype html
+html(lang="en")
+    head
+        title Orly Kahn-Waldman Makeup Artist
+        link(rel="stylesheet", type="text/css", href="css/style.dist.css")
+        link(rel='stylesheet', type='text/css', href='http://fonts.googleapis.com/css?family=Oranienbaum')
+        link(rel='stylesheet', type='text/css', href='http://fonts.googleapis.com/css?family=Alex+Brush')
+        block body
+            body
+                .site
+                    .header
+                        h1.name Orly Kahn-Waldman
+                        h2.job Makeup Artist
+                        .navigation
+                            a(href="index.html", class=(page==="home" ? 'btn active' : 'btn')) Home
+                            a(href="portfolio.html", class=(page==="portfolio" ? 'btn active' : 'btn')) Bridal Portfolio
+                            a(href="reviews.html", class=(page==="reviews" ? 'btn active' : 'btn')) Reviews
+                            a(href="rates.html", class=(page==="rates" ? 'btn active' : 'btn')) Services
+                            a(href="special_effects.html", class=(page==="special_effects" ? 'btn active' : 'btn')) FX Portfolio
+                            a(href="about.html", class=(page==="about" ? 'btn active' : 'btn')) The Artist
+                            a(href="contact.html", class=(page==="contact" ? 'btn active' : 'btn')) Contact
+                            a(href="community.html", class=(page==="community" ? 'btn active' : 'btn')) Community
