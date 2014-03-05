@@ -43,3 +43,4 @@ Requirements
 * Ruby and the sass gem
 * a mail server running (e.g. sendmail on ubuntu)
 * pip
+* NodeJs
