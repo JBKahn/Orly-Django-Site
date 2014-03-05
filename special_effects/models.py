@@ -1,14 +1,20 @@
-from django.db import models
-from PIL import Image
-from cStringIO import StringIO
-from django.core.files.uploadedfile import SimpleUploadedFile
 import os
+
+from django.core.files.uploadedfile import SimpleUploadedFile
+from django.db import models
+from django.db.models.signals import post_delete
+from django.dispatch.dispatcher import receiver
+
+from cStringIO import StringIO
+from PIL import Image
+
+from mysite.settings import STATIC_URL
 
 
 class SpecialEffects(models.Model):
     title = models.CharField(max_length=50, null=True, blank=True)
-    imgfile = models.ImageField(upload_to='special_effects/static/img')
-    thumbnail = models.ImageField(upload_to='special_effects/static/img', max_length=500, blank=True, null=True)
+    imgfile = models.ImageField(upload_to=STATIC_URL[-1] + 'img')
+    thumbnail = models.ImageField(upload_to=STATIC_URL[-1] + 'img', max_length=500, blank=True, null=True)
     position = models.PositiveSmallIntegerField("Position")
 
     class Meta:
@@ -60,7 +66,7 @@ class SpecialEffects(models.Model):
         suf = SimpleUploadedFile(os.path.split(self.imgfile.name)[-1], temp_handle.read(), content_type=DJANGO_TYPE)
         self.thumbnail.save('%s_thumbnail.%s' % (os.path.splitext(suf.name)[0], FILE_EXTENSION), suf, save=False)
 
-    def save(self):
+    def save(self, *args, **kwargs):
         if not self.thumbnail:
             self.create_thumbnail()
         if self.position is None:
@@ -72,4 +78,13 @@ class SpecialEffects(models.Model):
                 # First row
                 self.position = 0
 
-        super(SpecialEffects, self).save()
+        super(SpecialEffects, self).save(*args, **kwargs)
+
+
+@receiver(post_delete, sender=SpecialEffects)
+def special_effects(sender, instance, **kwargs):
+    # Pass false so FileField doesn't save the model.
+    if instance.imgfile:
+        instance.imgfile.delete(False)
+    if instance.thumbnail:
+        instance.thumbnail.delete(False)
