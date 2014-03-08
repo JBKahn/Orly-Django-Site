@@ -1,0 +1,40 @@
+
+{% extends "base.html" %}
+{% block body %}
+{{ block.super }}
+<div class="site">
+  <div class="content">
+    <div class="review">
+      <form action="#" onsubmit="submitReviewForm();return false" class="form-horizontal">
+        <div class="form-group">
+          <label for="id_name" class="col-sm-2 control-label">Name:</label>
+          <div class="col-sm-10">
+            <input id="id_name" maxlength="20" name="name" type="text" class="form-control"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="id_text" class="col-sm-2 control-label">Text:</label>
+          <div class="col-sm-10">
+            <textarea id="id_text" cols="40" name="message" rows="10" style="resize:none;" class="form-control"></textarea>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>{% for review in reviews %}
+    <div class="review">
+      <p>{{ review.text | safe }}</p>{% if review.author %}
+      <p>– {{ review.author }}</p>{% endif %}
+    </div>{% endfor %}
+  </div>
+</div>
+<script type="text/javascript">
+  function submitReviewForm() {
+    setCSRF();
+    return submitReviewFormOld('{% url "reviews:form_submit" %}');
+  };
+  
+</script>{% endblock %}
