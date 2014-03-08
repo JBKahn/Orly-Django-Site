@@ -11,17 +11,73 @@ from PIL import Image
 from mysite.settings import STATIC_URL
 
 
+class Sprite(models.Model):
+    image = models.ImageField(upload_to=STATIC_URL[1:] + 'img', null=True, blank=True)
+    name = models.CharField(max_length=50, null=False, blank=False)
+
+    def generate(self):
+        spriteitems = []
+        if self.bridalportfolio_set.exists():
+            spriteitems = self.bridalportfolio_set.order_by('id')
+        elif self.specialeffects_set.exists():
+            spriteitems = self.specialeffects_set.order_by('id')
+        elif self.clientreview_set.exists():
+            spriteitems = self.clientreview_set.order_by('id')
+
+        if len(spriteitems) == 0:
+            return
+
+        total_height = 0
+        for sprite in spriteitems:
+            total_height += sprite.thumbnail.height
+
+        img_sprite = Image.new("RGBA", (233, total_height))
+        height_offset = 0
+        
+        for portfolio_object in spriteitems:
+            pasteBox = (
+                0,  # x cordinate 1
+                height_offset,  # y coordinate 1
+                portfolio_object.thumbnail.width,  # x cordinate 2
+                height_offset + portfolio_object.thumbnail.height  # y cordinate 2
+            )
+            portfolio_image = Image.open(portfolio_object.thumbnail.path)
+            height_offset += portfolio_object.thumbnail.height
+            img_sprite.paste(portfolio_image, pasteBox)
+            portfolio_object.thumbnail_sprite_offset_top = height_offset
+            portfolio_object.save()
+            portfolio_image = None
+
+        temp_handle = StringIO()
+        img_sprite.save(temp_handle, 'png')
+        temp_handle.seek(0)
+
+        suf = SimpleUploadedFile(
+            os.path.split(self.name)[-1],
+            temp_handle.read(),
+            content_type='image/png'
+        )
+        self.image.delete(False)
+        self.image.save(
+            '%s_thumbnail.%s' % (os.path.splitext(suf.name)[0], 'png'),
+            suf,
+            save=False
+        )
+        self.save()
+
+
 class BridalPortfolio(models.Model):
     title = models.CharField(max_length=50, null=False, blank=True)
-    imgfile = models.ImageField(upload_to=STATIC_URL[-1] + 'img')
-    thumbnail = models.ImageField(upload_to=STATIC_URL[-1] + 'img',max_length=500, blank=True, null=True)
+    imgfile = models.ImageField(upload_to=STATIC_URL[1:] + 'img')
+    thumbnail = models.ImageField(upload_to=STATIC_URL[1:] + 'img', max_length=500, blank=True, null=True)
     position = models.PositiveSmallIntegerField("Position")
+    thumbnail_sprite_offset_top = models.PositiveSmallIntegerField(default=0)
+    sprite = models.ForeignKey(Sprite)
 
     class Meta:
         ordering = ['position']
 
     def format_thumbnail(self):
-        # import ipdb; ipdb.set_trace();
         return u'<img src="/%s" />' % '/'.join(self.thumbnail.url.split('/'))
     format_thumbnail.allow_tags = True
 
@@ -85,6 +141,8 @@ class BridalPortfolio(models.Model):
             except IndexError:
                 # First row
                 self.position = 0
+
+        self.sprite, created = Sprite.objects.get_or_create(name='bridal_portfolio')
 
         super(BridalPortfolio, self).save(*args, **kwargs)
 

@@ -29,7 +29,7 @@
     <div id="links" class="js-masonry" data-masonry-options='{ "itemSelector": ".gallery-image", "columnWidth": 233 }'>
       {% for image in images %}
         <a href="{% static image.big_path %}" title="{{ image.title }}" data-gallery="data-gallery">
-          <img src="{% static image.small_path %}" class="gallery-image" alt="{{ image.title }}">
+          <span style="display:block;background:url({% static image.small_path %}) no-repeat; background-position:0px -{{ image.thumbnail_offset_top }}px;width:{{ image.thumbnail_width }}px;height:{{ image.thumbnail_height }}px;" data-src="{% static image.small_path %}" class="gallery-image" alt="{{ image.title }}"></span>
         </a>
       {% endfor %}
     </div>
