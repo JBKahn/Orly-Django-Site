@@ -9,13 +9,16 @@ from cStringIO import StringIO
 from PIL import Image
 
 from mysite.settings import STATIC_URL
+from portfolio.models import Sprite
 
 
 class SpecialEffects(models.Model):
     title = models.CharField(max_length=50, null=True, blank=True)
-    imgfile = models.ImageField(upload_to=STATIC_URL[-1] + 'img')
-    thumbnail = models.ImageField(upload_to=STATIC_URL[-1] + 'img', max_length=500, blank=True, null=True)
+    imgfile = models.ImageField(upload_to=STATIC_URL[1:] + 'img')
+    thumbnail = models.ImageField(upload_to=STATIC_URL[1:] + 'img', max_length=500, blank=True, null=True)
     position = models.PositiveSmallIntegerField("Position")
+    thumbnail_sprite_offset_top = models.PositiveSmallIntegerField(default=0)
+    sprite = models.ForeignKey(Sprite)
 
     class Meta:
         ordering = ['position']
@@ -78,6 +81,7 @@ class SpecialEffects(models.Model):
                 # First row
                 self.position = 0
 
+        self.sprite, created = Sprite.objects.get_or_create(name='special_effects')
         super(SpecialEffects, self).save(*args, **kwargs)
 
 

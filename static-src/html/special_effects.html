@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+doctype html
+<html lang="en">
+  <head>
+    <title>Orly Kahn-Waldman Makeup Artist</title>
+    <link rel="stylesheet" type="text/css" href="css/style.dist.css">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Oranienbaum">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Alex+Brush">
+    <body>
+      <div class="site">
+        <div class="header">
+          <h1 class="name">Orly Kahn-Waldman</h1>
+          <h2 class="job">Makeup Artist</h2>
+          <div class="navigation"><a href="index.html" class="btn">Home</a><a href="portfolio.html" class="btn">Bridal Portfolio</a><a href="reviews.html" class="btn">Reviews</a><a href="rates.html" class="btn">Services</a><a href="special_effects.html" class="btn active">FX Portfolio</a><a href="about.html" class="btn">The Artist</a><a href="contact.html" class="btn">Contact</a><a href="community.html" class="btn">Community</a></div>
+        </div>
+      </div>
+    </body>
+  </head>
+</html>
+<script src="js/app.dist.js"></script>
+<link rel="stylesheet" type="text/css" href="css/blueimp-gallery.min.css">
+<html lang="en">
+  <div class="site">
+    <div class="content">
+      <!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body-->
+      <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+        <!-- The container for the modal slides-->
+        <div class="slides"></div>
+        <!-- Controls for the borderless lightbox-->
+        <h3 class="title"></h3><a class="prev">‹</a><a class="next">›</a><a class="close">×</a><a class="play-pause"></a>
+        <ol class="indicator"></ol>
+        <!-- The modal dialog, which will be used to wrap the lightbox content-->
+        <div class="modal fade">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" aria-hidden="true" class="close">×</button>
+                <h4 class="modal-title"></h4>
+              </div>
+              <div class="modal-body next"></div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left prev"><i class="glyphicon glyphicon-chevron-left"></i>Previous</button>
+                <button type="button" class="btn btn-primary next">Next<i class="glyphicon glyphicon-chevron-right"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="links"><a href="img/se1big.jpeg" title="Banana" data-gallery="data-gallery"><img src="img/se1.jpeg" alt="Banana"></a><a href="img/se2big.jpeg" title="Apple" data-gallery="data-gallery"><img src="img/se2.jpeg" alt="Apple"></a><a href="img/se3big.jpeg" title="Orange" data-gallery="data-gallery"><img src="img/se3.jpeg" alt="Orange"></a><a href="img/se4big.jpeg" title="Banana" data-gallery="data-gallery"><img src="img/se4.jpeg" alt="Banana"></a><a href="img/se5big.jpeg" title="Apple" data-gallery="data-gallery"><img src="img/se5.jpeg" alt="Apple"></a><a href="img/se6big.jpeg" title="Orange" data-gallery="data-gallery"><img src="img/se6.jpeg" alt="Orange"></a></div>
+    </div><script src="http://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
+  </div>
+</html>
