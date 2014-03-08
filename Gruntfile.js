@@ -49,21 +49,21 @@ module.exports = function(grunt) {
             }
         },
 
-        // jade: {
-        //     compile: {
-        //         options: {
-        //             client: false,
-        //             pretty: true
-        //         },
-        //         files: [ {
-        //           cwd: "jade/",
-        //           src: "*.jade",
-        //           dest: "./",
-        //           expand: true,
-        //           ext: ".html"
-        //         } ]
-        //     }
-        // },
+        jade: {
+            compile: {
+                options: {
+                    client: false,
+                    pretty: true
+                },
+                files: [ {
+                  cwd: "static-src/jade/",
+                  src: "*.jade",
+                  dest: "static-src/html/",
+                  expand: true,
+                  ext: ".html"
+                } ]
+            }
+        },
 
         sass: {
           dist: {
@@ -80,7 +80,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-jade');
 
-    grunt.registerTask('default', ['sass', 'concat']);
+    grunt.registerTask('default', ['sass', 'concat', 'jade']);
     grunt.registerTask('dev', ['default', 'connect', 'watch']);
 
 };

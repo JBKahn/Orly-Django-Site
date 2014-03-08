@@ -1,8 +1,10 @@
-doctype html
+|{% load staticfiles %}
+|doctype html
 html(lang="en")
     head
         title Orly Kahn-Waldman Makeup Artist
-        link(rel="stylesheet", type="text/css", href="css/style.dist.css")
+        link(rel="stylesheet", type="text/css", href="#{% static "css/style.dist.css" %}")
+        script(src="{% static "js/requirements.dist.js" %}" type="text/javascript")
         link(rel='stylesheet', type='text/css', href='http://fonts.googleapis.com/css?family=Oranienbaum')
         link(rel='stylesheet', type='text/css', href='http://fonts.googleapis.com/css?family=Alex+Brush')
         block body
