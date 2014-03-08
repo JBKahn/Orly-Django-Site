@@ -1,5 +1,5 @@
 from django.views.generic import TemplateView
-from portfolio.models import BridalPortfolio
+from core.models import Sprite
 
 
 class PortfolioView(TemplateView):
@@ -9,4 +9,4 @@ class PortfolioView(TemplateView):
         return {"current_page_name": "Bridal Portfolio", "images": self.get_images()}
 
     def get_images(self):
-        return [{"big_path": ('/').join(piece.imgfile.name.split('/')[-2:]), "small_path": ('/').join(piece.thumbnail.name.split('/')[-2:]), "title": piece.title or ' '} for piece in BridalPortfolio.objects.order_by('position').all()]
+        return Sprite.objects.get(name='bridal_portfolio').get_sprite_data()

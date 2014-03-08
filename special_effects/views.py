@@ -1,5 +1,5 @@
 from django.views.generic import TemplateView
-from special_effects.models import SpecialEffects
+from core.models import Sprite
 
 
 class FXPortfolioView(TemplateView):
@@ -9,4 +9,4 @@ class FXPortfolioView(TemplateView):
         return {"current_page_name": "FX Portfolio", "images": self.get_images()}
 
     def get_images(self):
-        return [{"big_path": ('/').join(piece.imgfile.name.split('/')[-2:]), "small_path": ('/').join(piece.thumbnail.name.split('/')[-2:]), "title": piece.title or ' '} for piece in SpecialEffects.objects.order_by('position').all()]
+        return Sprite.objects.get(name='special_effects').get_sprite_data()
