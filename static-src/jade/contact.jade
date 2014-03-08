@@ -1,8 +1,53 @@
-doctype html
-- var page = 'contact'
-include base
-html(lang="en")
-        block body
-        .site
-            .content
-                iframe(src="http://www.vcita.com/widgets/contact_form/7a31f847263bdfb7?ver=2" width="100%" height="480" scrolling="no" frameborder="0" style="")
+| {% extends "base.html" %}
+
+| {% block body %}
+| {{ block.super }}
+
+.site
+  .content
+    form.form-horizontal(action='#', onsubmit!="submitContactForm();return false")
+      .form-group
+        label.col-sm-2.control-label(for='id_first_name') First name:
+        .col-sm-10
+          input#id_first_name.form-control(maxlength='20', name='first_name', type='text')
+      .form-group
+        label.col-sm-2.control-label(for='id_last_name') Last name:
+        .col-sm-10
+          input#id_last_name.form-control(maxlength='20', name='last_name', type='text')
+      .form-group
+        label.col-sm-2.control-label(for='id_email') Email address:
+        .col-sm-10
+          input#id_email.form-control(name='email_address', type='email')
+      .form-group
+        label.col-sm-2.control-label(for='id_phone_number') Phone number:
+        .col-sm-10
+          input#id_phone_number.form-control(name='phone_number', type='text')
+      .form-group
+        label.col-sm-2.control-label(for='id_date') Date of Event:
+        .col-sm-10
+          #dp6(data-date='12-02-2012', data-date-format='dd-mm-yyyy')
+          input#id_date.form-control(name='date', type='text')
+      .form-group
+        label.col-sm-2.control-label(for='id_head_count') Number of Individuals:
+        .col-sm-10
+          input#id_head_count.form-control(name='head_count', type='text')
+      .form-group
+        label.col-sm-2.control-label(for='id_location') Location:
+        .col-sm-10
+          input#id_location.form-control(name='location', type='text')
+      .form-group
+        label.col-sm-2.control-label(for='id_additional_info') Additional Information:
+        .col-sm-10
+          textarea#id_additional_info.form-control(cols='40', name='additional_information', rows='10', style='resize:none;')
+      .form-group
+        .col-sm-offset-2.col-sm-10
+          button.btn.btn-default(type='submit') Submit
+
+script(type='text/javascript').
+  function submitContactForm() {
+    setCSRF();
+    return submitForm('{% url "contact:form_submit" %}');
+  };
+  
+
+| {% endblock %}

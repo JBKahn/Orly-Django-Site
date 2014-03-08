@@ -1,0 +1,9 @@
+| {% extends "base.html" %}
+| {% load staticfiles %}
+
+| {% block body %}
+| {{ block.super }}
+.site
+  .content
+    img.home(src!='{% static "img/home_page_makeup.png" %}', alt='Applying Makeup', width='695', height='520')
+| {% endblock %}

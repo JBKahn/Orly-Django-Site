@@ -1,8 +1,5 @@
-doctype html
-- var page = 'community'
-include base
-html(lang="en")
-        block body
-        .site
-            .content
-                p community
+| {% extends "base.html" %}
+
+| {% block body %}
+| {{ block.super }}
+| {% endblock %}

@@ -1,0 +1,35 @@
+| {% load static %}
+
+div.site
+  div.content
+    // The Bootstrap Image Gallery lightbox, should be a child element of the document body
+    div#blueimp-gallery.blueimp-gallery.blueimp-gallery-controls
+      // The container for the modal slides
+      div.slides
+      // Controls for the borderless lightbox
+      h3.title
+      a.prev ‹
+      a.next ›
+      a.close ×
+      a.play-pause
+      ol.indicator
+      // The modal dialog, which will be used to wrap the lightbox content
+      div.modal.fade
+        div.modal-dialog
+          div.modal-content
+            div.modal-header
+              button.close(type='button', aria-hidden='true') ×
+              h4.modal-title
+            div.modal-body.next
+            div.modal-footer
+              button.btn.btn-default.pull-left.prev(type='button')
+                i.glyphicon.glyphicon-chevron-left
+                | Previous
+              button.btn.btn-primary.next(type='button')
+                | Next
+                i.glyphicon.glyphicon-chevron-right
+    div#links.js-masonry(data-masonry-options='{ "itemSelector": ".gallery-image", "columnWidth": 233 }')
+      | {% for image in images %}
+      a(href!='{% static image.big_path %}', title!='{{ image.title }}', data-gallery='data-gallery')
+        span.gallery-image(style!='display:block;background:url({% static image.small_path %}) no-repeat; background-position:0px -{{ image.thumbnail_offset_top }}px;width:{{ image.thumbnail_width }}px;height:{{ image.thumbnail_height }}px;', data-src!='{% static image.small_path %}', alt!='{{ image.title }}')
+      | {% endfor %}

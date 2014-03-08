@@ -1,45 +1,5 @@
-doctype html
-- var page = 'special_effects'
-include base
-script(src='js/app.dist.js')
-link(rel="stylesheet", type="text/css", href="css/blueimp-gallery.min.css")
-html(lang="en")
-    block body
-    .site
-        .content
-            // The Bootstrap Image Gallery lightbox, should be a child element of the document body
-            #blueimp-gallery.blueimp-gallery.blueimp-gallery-controls
-              // The container for the modal slides
-              .slides
-              // Controls for the borderless lightbox
-              h3.title
-              a.prev ‹
-              a.next ›
-              a.close ×
-              a.play-pause
-              ol.indicator
-              // The modal dialog, which will be used to wrap the lightbox content
-              .modal.fade
-                .modal-dialog
-                  .modal-content
-                    .modal-header
-                      button.close(type='button', aria-hidden='true') ×
-                      h4.modal-title
-                    .modal-body.next
-                    .modal-footer
-                      button.btn.btn-default.pull-left.prev(type='button')
-                        i.glyphicon.glyphicon-chevron-left
-                        | Previous
-                      button.btn.btn-primary.next(type='button')
-                        | Next
-                        i.glyphicon.glyphicon-chevron-right
-
-            #links
-                a(href='img/se1big.jpeg', title='Banana', data-gallery='data-gallery'): img(src='img/se1.jpeg', alt='Banana')
-                a(href='img/se2big.jpeg', title='Apple', data-gallery='data-gallery'): img(src='img/se2.jpeg', alt='Apple')
-                a(href='img/se3big.jpeg', title='Orange', data-gallery='data-gallery'): img(src='img/se3.jpeg', alt='Orange')
-                a(href='img/se4big.jpeg', title='Banana', data-gallery='data-gallery'): img(src='img/se4.jpeg', alt='Banana')
-                a(href='img/se5big.jpeg', title='Apple', data-gallery='data-gallery'): img(src='img/se5.jpeg', alt='Apple')
-                a(href='img/se6big.jpeg', title='Orange', data-gallery='data-gallery'): img(src='img/se6.jpeg', alt='Orange')
-
-        <script src="http://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
+| {% extends "base.html" %}
+| {% block body %}
+| {{ block.super }}
+| {% include "gallery.html" %}
+| {% endblock %}

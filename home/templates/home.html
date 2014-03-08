@@ -1,9 +1,8 @@
+
 {% extends "base.html" %}
 {% load staticfiles %}
-
 {% block body %}
-  {{ block.super }}
-  <div class="site">
-    <div class="content"><img src="{% static "img/home_page_makeup.png" %}" alt="Applying Makeup" width="695" height="520" class="home"></div>
-  </div>
-{% endblock %}
+{{ block.super }}
+<div class="site">
+  <div class="content"><img src="{% static "img/home_page_makeup.png" %}" alt="Applying Makeup" width="695" height="520" class="home"/></div>
+</div>{% endblock %}

@@ -1,21 +1,24 @@
-<!DOCTYPE html>
-{% load staticfiles %}
-doctype html
+<!DOCTYPE html>{% load staticfiles %}<!DOCTYPE html>
 <html lang="en">
   <head>
     <title>Orly Kahn-Waldman Makeup Artist</title>
-    <link rel="stylesheet" type="text/css" href="css/style.dist.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.dist.css' %}">
+    <script src="{% static 'js/requirements.dist.js' %}" type="text/javascript"></script>
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Oranienbaum">
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Alex+Brush">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Alex+Brush">{% block body %}
     <body>
       <div class="site">
         <div class="header">
           <h1 class="name">Orly Kahn-Waldman</h1>
           <h2 class="job">Makeup Artist</h2>
-          <div class="navigation"><a href="index.html" class="btn active">Home</a><a href="portfolio.html" class="btn">Bridal Portfolio</a><a href="reviews.html" class="btn">Reviews</a><a href="rates.html" class="btn">Services</a><a href="special_effects.html" class="btn">FX Portfolio</a><a href="about.html" class="btn">The Artist</a><a href="contact.html" class="btn">Contact</a><a href="community.html" class="btn">Community</a></div>
+          <div class="navigation">
+            {% for page in pages %}
+            <a href="{{ page.path }}" class="btn {% if page.name == current_page_name %}active{% endif %}">{{ page.name }}</a>
+            {% endfor%}
+          </div>
         </div>
       </div>
-    </body>
+    </body>{% endblock %}
   </head>
 </html>
 <html lang="en">
