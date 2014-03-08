@@ -1,25 +1,28 @@
-
-{% load staticfiles %}
-doctype html
+{% load staticfiles %}<!DOCTYPE html>
 <html lang="en">
   <head>
     <title>Orly Kahn-Waldman Makeup Artist</title>
-    <link rel="stylesheet" type="text/css" href="css/style.dist.css"/>
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Oranienbaum"/>
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Alex+Brush"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.dist.css' %}"/>
+    <script src="{% static 'js/requirements.dist.js' %}" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Oranienbaum">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Alex+Brush">{% block body %}
     <body>
       <div class="site">
         <div class="header">
           <h1 class="name">Orly Kahn-Waldman</h1>
           <h2 class="job">Makeup Artist</h2>
-          <div class="navigation"><a href="index.html" class="btn">Home</a><a href="portfolio.html" class="btn active">Bridal Portfolio</a><a href="reviews.html" class="btn">Reviews</a><a href="rates.html" class="btn">Services</a><a href="special_effects.html" class="btn">FX Portfolio</a><a href="about.html" class="btn">The Artist</a><a href="contact.html" class="btn">Contact</a><a href="community.html" class="btn">Community</a></div>
+          <div class="navigation">
+            {% for page in pages %}
+            <a href="{{ page.path }}" class="btn {% if page.name == current_page_name %}active{% endif %}">{{ page.name }}</a>
+            {% endfor%}
+          </div>
         </div>
       </div>
-    </body>
+    </body>{% endblock %}
   </head>
 </html>
 <script src="js/app.dist.js"></script>
-<link rel="stylesheet" type="text/css" href="css/blueimp-gallery.min.css"/>
+<link rel="stylesheet" type="text/css" href="css/blueimp-gallery.min.css">
 <div class="site">
   <div class="content">
     <!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body-->
@@ -46,6 +49,6 @@ doctype html
         </div>
       </div>
     </div>
-    <div id="links"><a href="img/1big.png" title="Banana" data-gallery="data-gallery"><img src="img/1.png" alt="Banana"/></a><a href="img/2big.jpeg" title="Apple" data-gallery="data-gallery"><img src="img/2.jpeg" alt="Apple"/></a><a href="img/3big.png" title="Orange" data-gallery="data-gallery"><img src="img/3.png" alt="Orange"/></a><a href="img/4big.jpeg" title="Banana" data-gallery="data-gallery"><img src="img/4.jpeg" alt="Banana"/></a><a href="img/5big.jpeg" title="Apple" data-gallery="data-gallery"><img src="img/5.jpeg" alt="Apple"/></a><a href="img/6big.jpeg" title="Orange" data-gallery="data-gallery"><img src="img/6.jpeg" alt="Orange"/></a><a href="img/7big.png" title="Banana" data-gallery="data-gallery"><img src="img/7.png" alt="Banana"/></a><a href="img/8big.png" title="Apple" data-gallery="data-gallery"><img src="img/8.png" alt="Apple"/></a><a href="img/9big.png" title="Orange" data-gallery="data-gallery"><img src="img/9.png" alt="Orange"/></a><a href="img/10big.png" title="Banana" data-gallery="data-gallery"><img src="img/10.png" alt="Banana"/></a><a href="img/11big.jpeg" title="Banana" data-gallery="data-gallery"><img src="img/11.jpeg" alt="Banana"/></a><a href="img/12big.jpeg" title="Apple" data-gallery="data-gallery"><img src="img/12.jpeg" alt="Apple"/></a><a href="img/13big.jpeg" title="Orange" data-gallery="data-gallery"><img src="img/13.jpeg" alt="Orange"/></a><a href="img/14big.jpeg" title="Banana" data-gallery="data-gallery"><img src="img/14.jpeg" alt="Banana"/></a><a href="img/15big.png" title="Apple" data-gallery="data-gallery"><img src="img/15.png" alt="Apple"/></a><a href="img/16big.jpeg" title="Orange" data-gallery="data-gallery"><img src="img/16.jpeg" alt="Orange"/></a><a href="img/17big.png" title="Banana" data-gallery="data-gallery"><img src="img/17.png" alt="Banana"/></a><a href="img/18big.jpeg" title="Apple" data-gallery="data-gallery"><img src="img/12.jpeg" alt="Apple"/></a><a href="img/19big.jpeg" title="Orange" data-gallery="data-gallery"><img src="img/19.jpeg" alt="Orange"/></a><a href="img/20big.png" title="Banana" data-gallery="data-gallery"><img src="img/20.png" alt="Banana"/></a><a href="img/21big.jpeg" title="Banana" data-gallery="data-gallery"><img src="img/21.jpeg" alt="Banana"/></a><a href="img/22jpeg.png" title="Apple" data-gallery="data-gallery"><img src="img/22.jpeg" alt="Apple"/></a><a href="img/23big.png" title="Orange" data-gallery="data-gallery"><img src="img/23.png" alt="Orange"/></a><a href="img/24big.png" title="Banana" data-gallery="data-gallery"><img src="img/24.png" alt="Banana"/></a><a href="img/25big.png" title="Apple" data-gallery="data-gallery"><img src="img/25.png" alt="Apple"/></a><a href="img/26big.png" title="Orange" data-gallery="data-gallery"><img src="img/26.png" alt="Orange"/></a></div>
+    <div id="links"><a href="img/1big.png" title="Banana" data-gallery="data-gallery"><img src="img/1.png" alt="Banana"></a><a href="img/2big.jpeg" title="Apple" data-gallery="data-gallery"><img src="img/2.jpeg" alt="Apple"></a><a href="img/3big.png" title="Orange" data-gallery="data-gallery"><img src="img/3.png" alt="Orange"></a><a href="img/4big.jpeg" title="Banana" data-gallery="data-gallery"><img src="img/4.jpeg" alt="Banana"></a><a href="img/5big.jpeg" title="Apple" data-gallery="data-gallery"><img src="img/5.jpeg" alt="Apple"></a><a href="img/6big.jpeg" title="Orange" data-gallery="data-gallery"><img src="img/6.jpeg" alt="Orange"></a><a href="img/7big.png" title="Banana" data-gallery="data-gallery"><img src="img/7.png" alt="Banana"></a><a href="img/8big.png" title="Apple" data-gallery="data-gallery"><img src="img/8.png" alt="Apple"></a><a href="img/9big.png" title="Orange" data-gallery="data-gallery"><img src="img/9.png" alt="Orange"></a><a href="img/10big.png" title="Banana" data-gallery="data-gallery"><img src="img/10.png" alt="Banana"></a><a href="img/11big.jpeg" title="Banana" data-gallery="data-gallery"><img src="img/11.jpeg" alt="Banana"></a><a href="img/12big.jpeg" title="Apple" data-gallery="data-gallery"><img src="img/12.jpeg" alt="Apple"></a><a href="img/13big.jpeg" title="Orange" data-gallery="data-gallery"><img src="img/13.jpeg" alt="Orange"></a><a href="img/14big.jpeg" title="Banana" data-gallery="data-gallery"><img src="img/14.jpeg" alt="Banana"></a><a href="img/15big.png" title="Apple" data-gallery="data-gallery"><img src="img/15.png" alt="Apple"></a><a href="img/16big.jpeg" title="Orange" data-gallery="data-gallery"><img src="img/16.jpeg" alt="Orange"></a><a href="img/17big.png" title="Banana" data-gallery="data-gallery"><img src="img/17.png" alt="Banana"></a><a href="img/18big.jpeg" title="Apple" data-gallery="data-gallery"><img src="img/12.jpeg" alt="Apple"></a><a href="img/19big.jpeg" title="Orange" data-gallery="data-gallery"><img src="img/19.jpeg" alt="Orange"></a><a href="img/20big.png" title="Banana" data-gallery="data-gallery"><img src="img/20.png" alt="Banana"></a><a href="img/21big.jpeg" title="Banana" data-gallery="data-gallery"><img src="img/21.jpeg" alt="Banana"></a><a href="img/22jpeg.png" title="Apple" data-gallery="data-gallery"><img src="img/22.jpeg" alt="Apple"></a><a href="img/23big.png" title="Orange" data-gallery="data-gallery"><img src="img/23.png" alt="Orange"></a><a href="img/24big.png" title="Banana" data-gallery="data-gallery"><img src="img/24.png" alt="Banana"></a><a href="img/25big.png" title="Apple" data-gallery="data-gallery"><img src="img/25.png" alt="Apple"></a><a href="img/26big.png" title="Orange" data-gallery="data-gallery"><img src="img/26.png" alt="Orange"></a></div>
   </div><script src="http://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
 </div>
