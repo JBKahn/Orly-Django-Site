@@ -50,6 +50,7 @@ INSTALLED_APPS = (
     'south',
     'rest_framework',
     'django_extensions',
+    'core',
     'home',
     'portfolio',
     'reviews',

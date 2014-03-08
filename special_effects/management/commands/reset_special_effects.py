@@ -2,6 +2,7 @@ import os
 
 from django.core.files import File
 from django.core.management.base import BaseCommand
+from core.models import Sprite
 from special_effects.models import SpecialEffects
 
 
@@ -16,3 +17,4 @@ class Command(BaseCommand):
             f = open(os.getcwd() + '/special_effects/management/commands/' + photo, 'r')
             f.seek(0)
             SpecialEffects.objects.create(imgfile=File(f))
+        Sprite.objects.get(name='special_effects').generate()
