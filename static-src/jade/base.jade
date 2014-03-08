@@ -1,17 +1,10 @@
 | {% load staticfiles %}
-
-mixin django-css(path)
-  link(rel="stylesheet", type="text/css", href="{% static '#{path}' %}")
-
-mixin django-js(path)
-  script(src="{% static '#{path}' %}" type="text/javascript")
-
 doctype html
 html(lang="en")
     head
         title Orly Kahn-Waldman Makeup Artist
-        +django-css("css/style.dist.css")
-        +django-js("js/requirements.dist.js")
+        link(rel="stylesheet", type="text/css", href!='{% static "css/style.dist.css" %}')
+        script(src!='{% static "js/requirements.dist.js" %}' type="text/javascript")
 
         link(rel='stylesheet', type='text/css', href='http://fonts.googleapis.com/css?family=Oranienbaum')
         link(rel='stylesheet', type='text/css', href='http://fonts.googleapis.com/css?family=Alex+Brush')
