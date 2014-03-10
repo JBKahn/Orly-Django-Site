@@ -25,6 +25,6 @@
         </div>
       </div>
     </div>
-    <div id="links" data-masonry-options="{ &quot;itemSelector&quot;: &quot;.gallery-image&quot;, &quot;columnWidth&quot;: 233 }" class="js-masonry">{% for image in images %}<a href="{% static image.big_path %}" title="{{ image.title }}" data-gallery="data-gallery"><span style="display:block;background:url({% static image.small_path %}) no-repeat; background-position:0px -{{ image.thumbnail_offset_top }}px;width:{{ image.thumbnail_width }}px;height:{{ image.thumbnail_height }}px;" data-src="{% static image.small_path %}" alt="{{ image.title }}" class="gallery-image"></span></a>{% endfor %}</div>
+    <div id="links" data-masonry-options="{ &quot;itemSelector&quot;: &quot;.gallery-image&quot;, &quot;columnWidth&quot;: 223, &quot;gutter&quot;: 15}" class="js-masonry">{% for image in images %}<a href="{% static image.big_path %}" title="{{ image.title }}" data-gallery="data-gallery"><span style="margin-bottom: 15px;display:block;background:url({% static image.small_path %}) no-repeat; background-position:0px -{{ image.thumbnail_offset_top }}px;width:{{ image.thumbnail_width }}px;height:{{ image.thumbnail_height }}px;" data-src="{% static image.small_path %}" alt="{{ image.title }}" class="gallery-image"></span></a>{% endfor %}</div>
   </div>
 </div>

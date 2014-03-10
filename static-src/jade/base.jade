@@ -11,7 +11,7 @@ html(lang="en")
         | {% block body %}
         block body
             body
-                .site
+                .site-nav
                     .header
                         h1.name Orly Kahn-Waldman
                         h2.job Makeup Artist
@@ -19,4 +19,12 @@ html(lang="en")
                           | {% for page in pages %}
                           <a href="{{ page.path }}" class="btn {% if page.name == current_page_name %}active{% endif %}">{{ page.name }}</a>
                           | {% endfor%}
+        | {% endblock %}
+        | {% block footer %}
+        .site-footer
+            .content
+                .footer(style="margin-top: 50px; border-top: 1px solid black")
+                    p.email orlygoldakahn@gmail.com
+                    p.joseph Designed and written by <a href="https://github.com/JBKahn" target="_blank">Joseph Kahn</a>
+                    p.number 416 399 6078
         | {% endblock %}

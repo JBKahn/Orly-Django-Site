@@ -2,8 +2,7 @@ from rest_framework import serializers
 
 
 class ContactSerializer(serializers.Serializer):
-    first_name = serializers.CharField(max_length=40)
-    last_name = serializers.CharField(max_length=40)
+    name = serializers.CharField(max_length=80)
     email = serializers.EmailField()
     phone_number = serializers.CharField(max_length=40, required=False)
     date = serializers.DateField(required=False)

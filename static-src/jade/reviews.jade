@@ -1,27 +1,16 @@
 | {% extends "base.html" %}
-
+| {% load staticfiles %}
 | {% block body %}
 | {{ block.super }}
 .site
   .content
-    .review
-      form.form-horizontal(action='#', onsubmit='submitReviewForm();return false')
-        .form-group
-          label.col-sm-2.control-label(for='id_name') Name:
-          .col-sm-10
-            input#id_name.form-control(maxlength='20', name='name', type='text')
-        .form-group
-          label.col-sm-2.control-label(for='id_text') Text:
-          .col-sm-10
-            textarea#id_text.form-control(cols='40', name='message', rows='10', style='resize:none;')
-        .form-group
-          .col-sm-offset-2.col-sm-10
-            button.btn.btn-default(type='submit') Submit
-
-
     | {% for review in reviews %}
     .review
-      p {{ review.text | safe }}
+      .review-content
+        | {% if review.thumbnail_width %}
+        span(style!="background:url({% static review.thumbnail_path %}) no-repeat; background-position:0px -{{ review.thumbnail_offset_top }}px;width:{{ review.thumbnail_width }}px;height:{{ review.thumbnail_height }}px;" alt="{{ review.author }}" class="review-image")
+        | {% endif %}
+        p {{ review.text | safe }}
       | {% if review.author %}
       p – {{ review.author }}
       | {% endif %}

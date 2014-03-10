@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-    $('#id_date').datepicker();
+    $('#date').datepicker({autoclose: true});
 });
 
 function setCSRF() {
@@ -41,19 +41,18 @@ function submitForm(url) {
     url: url,
     type: 'POST',
     data: {
-        first_name: $('#id_first_name').val(),
-        last_name: $('#id_last_name').val(),
-        email: $('#id_email').val(),
-        phone_number: $('#id_phone_number').val(),
-        date: $('#id_date').val(),
-        head_count: $('#id_head_count').val(),
-        location: $('#id_location').val(),
-        additional_info: $('#id_additional_info').val(),
+        name: $('#name').val(),
+        email: $('#email').val(),
+        phone_number: $('#phone_number').val(),
+        date: $('#date').val(),
+        head_count: $('#head_count').val(),
+        location: $('#location').val(),
+        additional_info: $('#additional_info').val(),
     },
     dataType: 'json'
   }).fail(function (data, textStatus, jqXHR) {
         for (var key in data.responseJSON.errors) {
-           $('#id_' + key).parent().addClass('has-error');
+           $('#' + key).parent().addClass('has-error');
         }
   });
 }
@@ -70,7 +69,7 @@ function submitReviewFormOld(url) {
     dataType: 'json'
   }).fail(function (data, textStatus, jqXHR) {
         for (var key in data.responseJSON) {
-           $('#id_' + key).parent().addClass('has-error');
+           $(key).parent().addClass('has-error');
         }
   }).done(function (data, textStatus, jqXHR) {
         var review = $('#id_text').val();

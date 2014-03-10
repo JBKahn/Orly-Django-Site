@@ -1,8 +1,11 @@
-.site {
+.site, .site-nav, .site-footer {
     max-width: 1000px;
     margin: auto;
     background-color: white;
     color: #57534a;
+}
+.site {
+    min-height: 960px;
 }
 
 .header {
@@ -33,6 +36,9 @@
         }
     }
 }
+.home-below-picture {
+    height: 150px;
+}
 .content {
     width: 70%;
     margin: auto;
@@ -60,8 +66,20 @@
         color: #57534a;
         text-decoration: underline;
     }
+    .review-content {
+        min-height: 90px;
+        .review-image {
+            border-radius: 50%;
+            float: left;
+            display: block;
+            margin-right: 5px;
+        }
+    }
 }
 .about {
+    h3 {
+        font-variant: small-caps;
+    }
     p {
         margin-left: 15px;
     }
@@ -78,6 +96,7 @@
 }
 
 .stupid-badges{
+    margin-top: 25px;
     height: 10pc;
     width: 100%;
     a {
@@ -121,4 +140,43 @@
     width: 158px;
     display: block;
     background-position-x: -497px;
+}
+
+.submit-form {
+    margin-top: 10px;
+}
+
+.testimonial {
+    margin: 10px 0 0 0;
+    width: 75%;
+    float: left;
+    img {
+        float:left;
+        margin-right: 10px;
+        display: block;
+        border-radius: 50%;
+    }
+    p {
+        font-size: 20px;
+        font-style: italic;
+    }
+}
+.callout {
+    font-style: italic;
+    font-size: 20px;
+    width: 22%;
+    float: right;
+    margin-top: 10px;
+}
+.footer {
+    .email {
+        float: left;
+    }
+    .joseph {
+        float: right;
+        font-size: 9px;
+    }
+    .number {
+        text-align: center;
+    }
 }

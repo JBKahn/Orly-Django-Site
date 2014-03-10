@@ -46,7 +46,7 @@ module.exports = function(grunt) {
                 files: [
                     "static-src/sass/*",
                     "static-src/js/*",
-                    // "jade/*"
+                    "static-src/jade/*"
                 ],
                 tasks: ['default']
             }

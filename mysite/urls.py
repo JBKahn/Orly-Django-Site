@@ -5,6 +5,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'', include('home.urls', namespace="home")),
+    url(r'^core/', include('core.urls', namespace="core")),
     url(r'^portfolio/', include('portfolio.urls', namespace="portfolio")),
     url(r'^reviews/', include('reviews.urls', namespace="reviews")),
     url(r'^services/', include('services.urls', namespace="services")),
