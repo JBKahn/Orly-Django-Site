@@ -566,11 +566,11 @@
   margin: 20px 30px 30px 30px;
   background: #eee;
   border-left: 5px solid #57534a; }
-  .review p:first-child:before {
+  .review p.review-text:before {
     content: "\"";
     margin-right: 5px;
     font-size: 20px; }
-  .review p:first-child:after {
+  .review p.review-text:after {
     content: "\"";
     font-size: 20px; }
   .review a {

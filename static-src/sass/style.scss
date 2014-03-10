@@ -53,12 +53,12 @@
     margin: 20px 30px 30px 30px;
     background: #eee;
     border-left: 5px solid #57534a;
-    p:first-child:before {
+    p.review-text:before {
         content: "\"";
         margin-right: 5px;
         font-size: 20px;
     }
-    p:first-child:after {
+    p.review-text:after {
         content: "\"";
         font-size: 20px;
     }
