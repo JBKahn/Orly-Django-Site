@@ -1,12 +1,10 @@
 from django import forms
 from django.core.mail import send_mail
 from django.conf import settings
-from localflavor.ca import forms as CAFormFields
 
 
 class ContactForm(forms.Form):
-    first_name = forms.CharField(max_length=40)
-    last_name = forms.CharField(max_length=40)
+    name = forms.CharField(max_length=80)
     email = forms.EmailField()
     phone_number = forms.CharField(max_length=40, required=False)
     date = forms.DateField(required=False)
@@ -26,4 +24,4 @@ class ContactForm(forms.Form):
         )
 
     def format_email(self, data):
-       return "Name: {first_name} {last_name}\nEmail: {email}\nPhone Number: {phone_number}\nDate: {date}\nHead Count: {head_count}\nLocation: {location}\nAdditional Information: {additional_info}".format(**data)
+       return "Name: {name}\nEmail: {email}\nPhone Number: {phone_number}\nDate: {date}\nHead Count: {head_count}\nLocation: {location}\nAdditional Information: {additional_info}".format(**data)

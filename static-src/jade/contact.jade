@@ -5,43 +5,27 @@
 
 .site
   .content
-    form.form-horizontal(action='#', onsubmit!="submitContactForm();return false")
-      .form-group
-        label.col-sm-2.control-label(for='id_first_name') First name:
-        .col-sm-10
-          input#id_first_name.form-control(maxlength='20', name='first_name', type='text')
-      .form-group
-        label.col-sm-2.control-label(for='id_last_name') Last name:
-        .col-sm-10
-          input#id_last_name.form-control(maxlength='20', name='last_name', type='text')
-      .form-group
-        label.col-sm-2.control-label(for='id_email') Email address:
-        .col-sm-10
-          input#id_email.form-control(name='email_address', type='email')
-      .form-group
-        label.col-sm-2.control-label(for='id_phone_number') Phone number:
-        .col-sm-10
-          input#id_phone_number.form-control(name='phone_number', type='text')
-      .form-group
-        label.col-sm-2.control-label(for='id_date') Date of Event:
-        .col-sm-10
-          #dp6(data-date='12-02-2012', data-date-format='dd-mm-yyyy')
-          input#id_date.form-control(name='date', type='text')
-      .form-group
-        label.col-sm-2.control-label(for='id_head_count') Number of Individuals:
-        .col-sm-10
-          input#id_head_count.form-control(name='head_count', type='text')
-      .form-group
-        label.col-sm-2.control-label(for='id_location') Location:
-        .col-sm-10
-          input#id_location.form-control(name='location', type='text')
-      .form-group
-        label.col-sm-2.control-label(for='id_additional_info') Additional Information:
-        .col-sm-10
-          textarea#id_additional_info.form-control(cols='40', name='additional_information', rows='10', style='resize:none;')
-      .form-group
-        .col-sm-offset-2.col-sm-10
-          button.btn.btn-default(type='submit') Submit
+    .col-sm-13.contact-form
+      form.form(action='#', onsubmit='submitContactForm();return false')
+        .row
+          .col-xs-6.col-md-6.form-group
+            input#name.form-control(name='name', placeholder='Name', type='text', autofocus='')
+          .col-xs-6.col-md-6.form-group
+            input#email.form-control(name='email', placeholder='Email', type='email')
+        .row
+          .col-xs-6.col-md-6.form-group
+            input#phone_number.form-control(name='phone_number', placeholder='Phone Number', type='text')
+          .col-xs-6.col-md-6.form-group
+            input#date.form-control(name='date', placeholder='Date of Event', type='text')
+        .row
+          .col-xs-6.col-md-6.form-group
+            input#head_count.form-control(name='head_count', placeholder='Number of people that require makeup', type='text')
+          .col-xs-6.col-md-6.form-group
+            input#location.form-control(name='location', placeholder='Location of Event', type='text')
+        textarea#additional_info.form-control(name='additional_info', placeholder='Additional Information', rows='5')
+        .col-xs-13.col-md-13.form-group.btns
+          button.btn.btn-primary.pull-right(type='submit') Submit
+
 
 script(type='text/javascript').
   function submitContactForm() {

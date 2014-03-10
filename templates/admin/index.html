@@ -1,5 +1,6 @@
 {% extends "admin/base_site.html" %}
 {% load i18n admin_static %}
+{% load staticfiles %}
 
 {% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/dashboard.css" %}" />{% endblock %}
 
@@ -10,7 +11,12 @@
 {% block breadcrumbs %}{% endblock %}
 
 {% block content %}
+<script src="{% static "js/requirements.dist.js" %}" type="text/javascript"></script>
 <div id="content-main">
+Generate Sprites: <a href="javascript:void(0)" onclick="generateSprites()">click here to generate</a>.
+Reset Portfolio: <a href="javascript:void(0)" onclick="resetPortfolio()">click here to reset</a>.
+Reset Special Effects: <a href="javascript:void(0)" onclick="resetSpecialEffects()">click here to reset</a>.
+Reset Reviews: <a href="javascript:void(0)" onclick="resetReviews()">click here to reset</a>.
 
 {% if app_list %}
     {% for app in app_list %}
@@ -49,6 +55,44 @@
     <p>{% trans "You don't have permission to edit anything." %}</p>
 {% endif %}
 </div>
+<script type="text/javascript">
+    function generateSprites() {
+        setCSRF();
+        $.ajax({
+            url: "{% url "core:generate_sprites" %}",
+            type: 'POST',
+            data: {},
+            dataType: 'json'
+        }); 
+    }
+    function resetPortfolio() {
+        setCSRF();
+        $.ajax({
+            url: "{% url "core:reset_bridal_portfolio" %}",
+            type: 'POST',
+            data: {},
+            dataType: 'json'
+        }); 
+    }
+    function resetSpecialEffects() {
+        setCSRF();
+        $.ajax({
+            url: "{% url "core:reset_special_effects" %}",
+            type: 'POST',
+            data: {},
+            dataType: 'json'
+        }); 
+    }
+    function resetReviews() {
+        setCSRF();
+        $.ajax({
+            url: "{% url "core:reset_reviews" %}",
+            type: 'POST',
+            data: {},
+            dataType: 'json'
+        }); 
+    }
+</script>
 {% endblock %}
 
 {% block sidebar %}

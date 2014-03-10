@@ -4,5 +4,17 @@
 {% block body %}
 {{ block.super }}
 <div class="site">
-  <div class="content"><img src="{% static "img/home_page_makeup.png" %}" alt="Applying Makeup" width="695" height="520" class="home"/></div>
+  <div class="content"><img src="{% static "img/home_page_makeup.png" %}" alt="Applying Makeup" width="695" height="520" class="home"/>
+    <div class="home-below-picture">
+      <div class="testimonial">
+        <div class="testimonial-content"><img src="{% static "img/amy_thumbnail.jpg" %}" alt="Amy" width="100" height="100"/>
+          <p>Not only did you make me look beautiful, Orly, but I felt it! You are so professional and yet so personable, attentive and the way you listen to what your clients want is priceless. From the bottom of my heart, thank you</p>
+        </div>
+        <p>– Amy C.</p>
+      </div>
+      <p class="callout">
+        <button type="submit" class="btn btn-primary">Contact Me Today!</button>to book your trial and prepare for your special day!
+      </p>
+    </div>
+  </div>
 </div>{% endblock %}

@@ -6,4 +6,15 @@
 .site
   .content
     img.home(src!='{% static "img/home_page_makeup.png" %}', alt='Applying Makeup', width='695', height='520')
+    .home-below-picture
+      .testimonial
+        .testimonial-content
+          img(src!='{% static "img/amy_thumbnail.jpg" %}', alt='Amy', width='100', height='100')
+          p
+            | Not only did you make me look beautiful, Orly, but I felt it! You are so professional and yet so personable, attentive and the way you listen to what your clients want is priceless. From the bottom of my heart, thank you
+        p – Amy C.
+      p.callout
+        button.btn.btn-primary(type='submit') Contact Me Today!
+        | to book your trial and prepare for your special day!
+
 | {% endblock %}

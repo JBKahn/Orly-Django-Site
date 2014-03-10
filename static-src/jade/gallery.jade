@@ -28,8 +28,8 @@ div.site
               button.btn.btn-primary.next(type='button')
                 | Next
                 i.glyphicon.glyphicon-chevron-right
-    div#links.js-masonry(data-masonry-options='{ "itemSelector": ".gallery-image", "columnWidth": 233 }')
+    div#links.js-masonry(data-masonry-options='{ "itemSelector": ".gallery-image", "columnWidth": 223, "gutter": 15}')
       | {% for image in images %}
       a(href!='{% static image.big_path %}', title!='{{ image.title }}', data-gallery='data-gallery')
-        span.gallery-image(style!='display:block;background:url({% static image.small_path %}) no-repeat; background-position:0px -{{ image.thumbnail_offset_top }}px;width:{{ image.thumbnail_width }}px;height:{{ image.thumbnail_height }}px;', data-src!='{% static image.small_path %}', alt!='{{ image.title }}')
+        span.gallery-image(style!='margin-bottom: 15px;display:block;background:url({% static image.small_path %}) no-repeat; background-position:0px -{{ image.thumbnail_offset_top }}px;width:{{ image.thumbnail_width }}px;height:{{ image.thumbnail_height }}px;', data-src!='{% static image.small_path %}', alt!='{{ image.title }}')
       | {% endfor %}

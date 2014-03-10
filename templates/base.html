@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Oranienbaum">
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Alex+Brush">{% block body %}
     <body>
-      <div class="site">
+      <div class="site-nav">
         <div class="header">
           <h1 class="name">Orly Kahn-Waldman</h1>
           <h2 class="job">Makeup Artist</h2>
@@ -19,5 +19,15 @@
         </div>
       </div>
     </body>{% endblock %}
+    {% block footer %}
+    <div class="site-footer">
+      <div class="content">
+        <div style="margin-top: 50px; border-top: 1px solid black" class="footer">
+          <p class="email">orlygoldakahn@gmail.com</p>
+          <p class="joseph">Designed and written by <a href="https://github.com/JBKahn" target="_blank">Joseph Kahn</a></p>
+          <p class="number">416 399 6078</p>
+        </div>
+      </div>
+    </div>{% endblock %}
   </head>
 </html>

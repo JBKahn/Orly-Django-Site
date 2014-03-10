@@ -4,62 +4,38 @@
 {{ block.super }}
 <div class="site">
   <div class="content">
-    <form action="#" onsubmit="submitContactForm();return false" class="form-horizontal">
-      <div class="form-group">
-        <label for="id_first_name" class="col-sm-2 control-label">First name:</label>
-        <div class="col-sm-10">
-          <input id="id_first_name" maxlength="20" name="first_name" type="text" class="form-control"/>
+    <div class="col-sm-13 contact-form">
+      <form action="#" onsubmit="submitContactForm();return false" class="form">
+        <div class="row">
+          <div class="col-xs-6 col-md-6 form-group">
+            <input id="name" name="name" placeholder="Name" type="text" autofocus="" class="form-control"/>
+          </div>
+          <div class="col-xs-6 col-md-6 form-group">
+            <input id="email" name="email" placeholder="Email" type="email" class="form-control"/>
+          </div>
         </div>
-      </div>
-      <div class="form-group">
-        <label for="id_last_name" class="col-sm-2 control-label">Last name:</label>
-        <div class="col-sm-10">
-          <input id="id_last_name" maxlength="20" name="last_name" type="text" class="form-control"/>
+        <div class="row">
+          <div class="col-xs-6 col-md-6 form-group">
+            <input id="phone_number" name="phone_number" placeholder="Phone Number" type="text" class="form-control"/>
+          </div>
+          <div class="col-xs-6 col-md-6 form-group">
+            <input id="date" name="date" placeholder="Date of Event" type="text" class="form-control"/>
+          </div>
         </div>
-      </div>
-      <div class="form-group">
-        <label for="id_email" class="col-sm-2 control-label">Email address:</label>
-        <div class="col-sm-10">
-          <input id="id_email" name="email_address" type="email" class="form-control"/>
+        <div class="row">
+          <div class="col-xs-6 col-md-6 form-group">
+            <input id="head_count" name="head_count" placeholder="Number of people that require makeup" type="text" class="form-control"/>
+          </div>
+          <div class="col-xs-6 col-md-6 form-group">
+            <input id="location" name="location" placeholder="Location of Event" type="text" class="form-control"/>
+          </div>
         </div>
-      </div>
-      <div class="form-group">
-        <label for="id_phone_number" class="col-sm-2 control-label">Phone number:</label>
-        <div class="col-sm-10">
-          <input id="id_phone_number" name="phone_number" type="text" class="form-control"/>
+        <textarea id="additional_info" name="additional_info" placeholder="Additional Information" rows="5" class="form-control"></textarea>
+        <div class="col-xs-13 col-md-13 form-group btns">
+          <button type="submit" class="btn btn-primary pull-right">Submit</button>
         </div>
-      </div>
-      <div class="form-group">
-        <label for="id_date" class="col-sm-2 control-label">Date of Event:</label>
-        <div class="col-sm-10">
-          <div id="dp6" data-date="12-02-2012" data-date-format="dd-mm-yyyy"></div>
-          <input id="id_date" name="date" type="text" class="form-control"/>
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="id_head_count" class="col-sm-2 control-label">Number of Individuals:</label>
-        <div class="col-sm-10">
-          <input id="id_head_count" name="head_count" type="text" class="form-control"/>
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="id_location" class="col-sm-2 control-label">Location:</label>
-        <div class="col-sm-10">
-          <input id="id_location" name="location" type="text" class="form-control"/>
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="id_additional_info" class="col-sm-2 control-label">Additional Information:</label>
-        <div class="col-sm-10">
-          <textarea id="id_additional_info" cols="40" name="additional_information" rows="10" style="resize:none;" class="form-control"></textarea>
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-          <button type="submit" class="btn btn-default">Submit</button>
-        </div>
-      </div>
-    </form>
+      </form>
+    </div>
   </div>
 </div>
 <script type="text/javascript">

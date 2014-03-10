@@ -1,9 +1,9 @@
 from django.views.generic import TemplateView
 from rest_framework import generics
-from rest_framework.response import Response
 
 from reviews.models import ClientReview
 from reviews.serializers import ReviewSerializer
+from core.models import Sprite
 
 
 class ReviewView(TemplateView):
@@ -13,7 +13,7 @@ class ReviewView(TemplateView):
         return {"current_page_name": "Reviews", "reviews": self.get_reviews()}
 
     def get_reviews(self):
-        return [{'text': review.text, 'author': review.name} for review in ClientReview.objects.order_by('position').all()]
+        return Sprite.objects.get(name='reviews').get_sprite_data()
 
 
 class AddReviewView(generics.ListCreateAPIView):
