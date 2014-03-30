@@ -5,19 +5,15 @@
 | {{ block.super }}
 .site
     .content
-        .about
+        .community
             h3 Photography
-            a(href='http://www.ericbenchimol.com/', target='_blank')
-                span(style!="background:url({% static 'img/community_logos.png' %}) no-repeat;display: block; background-position:0px -157px;width:624px;height:159px;")
-        .about
+            a(href='http://www.ericbenchimol.com/', target='_blank').benchimol
+        .community
             h3 Hair Stylist
-            a(href='http://lokihairstudio.com/', target='_blank')
-                span(style!="background:url({% static 'img/community_logos.png' %}) no-repeat;display: block; background-position:0px -316px;width:386px;height:390px;")
-            a(href='http://rikkizucker.com/', target='_blank')
-                span(style!="background:url({% static 'img/community_logos.png' %}) no-repeat;display: block; background-position:0px -706px;width:541px;height:103px;")
-        .about
+            a(href='http://lokihairstudio.com/', target='_blank').loki
+            a(href='http://rikkizucker.com/', target='_blank').zucker
+        .community
             h3 Wedding Planner
-            a(href='http://www.melissabaum.com/', target='_blank')
-                span(style!="background:url({% static 'img/community_logos.png' %}) no-repeat;display: block; background-position:0px 0px;width:326px;height:157px;")
+            a(href='http://www.melissabaum.com/', target='_blank').melissa
 
 | {% endblock %}

@@ -30,6 +30,8 @@
         .btn {
             color: #57534a;
             font-weight: 900;
+            padding-left: 18px;
+            padding-right: 18px;
             &:hover {
                 text-decoration: underline;
             }
@@ -76,12 +78,42 @@
         }
     }
 }
-.about {
+.about, .community {
     h3 {
         font-variant: small-caps;
     }
     p {
         margin-left: 15px;
+    }
+}
+
+.community a {
+    background: url(../img/community_logos.png) no-repeat;
+    display: block;
+    &.benchimol{
+        background-position: 0px -70px;
+        height: 71px;
+        width: 280px;
+        background-size: 100%;
+    }
+    &.loki {
+        background-position: 0px -142px;
+        height: 175px;
+        width: 176px;
+        background-size: 159%;
+        border-radius: 100%;
+    }
+    &.zucker{
+        background-position: 0px -318px;
+        height: 50px;
+        width: 245px;
+        background-size: 115%;
+    }
+    &.melissa{
+        background-position: 0px 0px;
+        background-size: 192%;
+        height: 65px;
+        width: 140px;
     }
 }
 
@@ -143,6 +175,16 @@
 }
 
 .submit-form {
+    margin-top: 10px;
+}
+
+.form-header {
+    p {
+        text-align: center;
+    }
+}
+
+.contact-submit {
     margin-top: 10px;
 }
 

@@ -5,6 +5,10 @@
 
 .site
   .content
+    .form-header
+      p Fill out the form below to receive your personalized quote!
+      p I look forward to working with you!
+      p All inquiries are responded to within 48 hours.
     .col-sm-13.contact-form
       form.form(action='#', onsubmit='submitContactForm();return false')
         .row
@@ -24,7 +28,7 @@
             input#location.form-control(name='location', placeholder='Location of Event', type='text')
         textarea#additional_info.form-control(name='additional_info', placeholder='Additional Information', rows='5')
         .col-xs-13.col-md-13.form-group.btns
-          button.btn.btn-primary.pull-right(type='submit') Submit
+          button.btn.btn-primary.pull-right.contact-submit(type='submit') Submit
 
 
 script(type='text/javascript').
