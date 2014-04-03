@@ -11,9 +11,12 @@ class Migration(SchemaMigration):
         # Adding model 'SpecialEffects'
         db.create_table(u'special_effects_specialeffects', (
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('imgfile', self.gf('django.db.models.fields.files.ImageField')(max_length=100)),
             ('thumbnail', self.gf('django.db.models.fields.files.ImageField')(max_length=500, null=True, blank=True)),
             ('position', self.gf('django.db.models.fields.PositiveSmallIntegerField')()),
+            ('thumbnail_sprite_offset_top', self.gf('django.db.models.fields.PositiveSmallIntegerField')(default=0)),
+            ('sprite', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['core.Sprite'])),
+            ('title', self.gf('django.db.models.fields.CharField')(max_length=50, null=True, blank=True)),
+            ('imgfile', self.gf('django.db.models.fields.files.ImageField')(max_length=100)),
         ))
         db.send_create_signal(u'special_effects', ['SpecialEffects'])
 
@@ -24,12 +27,21 @@ class Migration(SchemaMigration):
 
 
     models = {
+        u'core.sprite': {
+            'Meta': {'object_name': 'Sprite'},
+            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'image': ('django.db.models.fields.files.ImageField', [], {'max_length': '100', 'null': 'True', 'blank': 'True'}),
+            'name': ('django.db.models.fields.CharField', [], {'max_length': '50'})
+        },
         u'special_effects.specialeffects': {
-            'Meta': {'ordering': "['position']", 'object_name': 'SpecialEffects'},
+            'Meta': {'object_name': 'SpecialEffects'},
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'imgfile': ('django.db.models.fields.files.ImageField', [], {'max_length': '100'}),
             'position': ('django.db.models.fields.PositiveSmallIntegerField', [], {}),
-            'thumbnail': ('django.db.models.fields.files.ImageField', [], {'max_length': '500', 'null': 'True', 'blank': 'True'})
+            'sprite': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['core.Sprite']"}),
+            'thumbnail': ('django.db.models.fields.files.ImageField', [], {'max_length': '500', 'null': 'True', 'blank': 'True'}),
+            'thumbnail_sprite_offset_top': ('django.db.models.fields.PositiveSmallIntegerField', [], {'default': '0'}),
+            'title': ('django.db.models.fields.CharField', [], {'max_length': '50', 'null': 'True', 'blank': 'True'})
         }
     }
 
