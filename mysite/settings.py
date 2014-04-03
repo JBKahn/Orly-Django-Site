@@ -8,10 +8,10 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.6/ref/settings/
 """
 
+import os
 from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 
@@ -22,20 +22,21 @@ TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 SECRET_KEY = 'u=^)5nuz)f)*svbu22kxg^(g+w2q*zk!x##o^hk7((_+87dsoc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = False
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ["orlywaldman.com"]
 
 # Email
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'orlykahnmakeupartist@gmail.com'
-EMAIL_HOST_PASSWORD = 'testpassword'
-DEFAULT_FROM_EMAIL = 'orlykahnmakeupartist@gmail.com'
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = False
+EMAIL_HOST = os.getenv("EMAIL_HOST", "testemailhost")
+EMAIL_PORT = 26
+EMAIL_HOST_USER = 'automaticreply@orlywaldman.com'
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD", "testpassword")
+DEFAULT_FROM_EMAIL = 'orly@orlywaldman.com'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 # Application definition
 
@@ -85,8 +86,12 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': os.getenv('DB_NAME', 'test_db_setting'),
+        'USER': os.getenv('DB_USER', 'test_db_setting'),
+        'PASSWORD': os.getenv('DB_PASSWORD', 'test_db_setting'),
+        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
+        'PORT': '3306',
     }
 }
 
@@ -108,7 +113,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = ['static']
+STATIC_ROOT = "/home3/orlywald/public_html/static"
+MEDIA_ROOT = "/home3/orlywald/public_html"
+
+PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_ROOT, '../static'),
+)
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
@@ -116,7 +127,3 @@ STATICFILES_FINDERS = (
 )
 
 GRAPPELLI_ADMIN_TITLE = 'Orly Kahn Makeup Artist Admin'
-
-
-# debug
-DEBUG = True
