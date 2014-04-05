@@ -11,3 +11,6 @@ static-src-build/
 
 # Sass cache
 .sass-cache/
+
+# Production settings
+mysite/production.py
