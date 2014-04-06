@@ -6,18 +6,21 @@
 <div class="site">
   <div class="content"><img src="{% static "img/home_page_makeup.png" %}" alt="Applying Makeup" width="700" height="466" class="home"/>
     <div class="home-below-picture">
-      <p class="callout">To recieve your free personalized quote for your special day<a href="{% url "contact:form" %}" class="btn btn-primary">Contact Me Today!</a></p>
+      <p class="callout">To recieve your free personalized quote for your special day</p>
+      <div class="callout-button-container"><a href="{% url "contact:form" %}" class="btn btn-primary callout-button">Contact Me Today!</a></div>
       <div class="testimonial">
-        <div class="testimonial-content"><img src="{% static "img/amy_thumbnail.jpg" %}" alt="Amy" width="100" height="100"/>
+        <div class="testimonial-content">
+          <div class="testimonial-image"><img src="{% static "img/amy_thumbnail.jpg" %}" alt="Amy" width="100" height="100"/></div>
           <p>"Not only did you make me look beautiful, Orly, but I felt it! You are so professional and yet so personable, attentive and the way you listen to what your clients want is priceless. From the bottom of my heart, thank you."</p>
+          <p>– Amy C.</p>
         </div>
-        <p>– Amy C.</p>
       </div>
       <div class="testimonial testimonial-right">
-        <div class="testimonial-content"><img src="{% static "img/baily_thumbnail.jpg" %}" alt="Amy" width="100" height="100"/>
+        <div class="testimonial-content">
+          <div class="testimonial-image"><img src="{% static "img/baily_thumbnail.jpg" %}" alt="Amy" width="100" height="100"/></div>
           <p>"Orly did an amazing job, she was a pleasure to have around, and provided a much needed calmness to a very hectic day! Orly was incredibly flexible and managed to make a group of very fussy ladies extremely happy with their make up, accommodating to each persons personal style."</p>
+          <p>– Baily</p>
         </div>
-        <p>– Baily</p>
       </div>
     </div>
   </div>

@@ -567,16 +567,15 @@ body {
     margin: auto;
     font-variant: small-caps; }
   .header .navigation {
-    width: 75%;
-    margin: 0 auto 20px; }
+    text-align: center; }
     .header .navigation a {
       font-variant: small-caps;
       font-size: 16px; }
     .header .navigation .btn {
       color: #57534a;
       font-weight: 900;
-      padding-left: 14.5px;
-      padding-right: 14.5px; }
+      padding-left: 1.92%;
+      padding-right: 1.92%; }
       .header .navigation .btn:hover {
         text-decoration: underline; }
 
@@ -623,30 +622,12 @@ body {
 .about p, .community p {
   margin-left: 15px; }
 
-.community a {
-  background: url(../img/community_logos.png) no-repeat;
-  display: block; }
-  .community a.benchimol {
-    background-position: 0px -70px;
-    height: 71px;
-    width: 280px;
-    background-size: 100%; }
-  .community a.loki {
-    background-position: 0px -142px;
-    height: 175px;
-    width: 176px;
-    background-size: 159%;
-    border-radius: 100%; }
-  .community a.zucker {
-    background-position: 0px -318px;
-    height: 50px;
-    width: 245px;
-    background-size: 115%; }
-  .community a.melissa {
-    background-position: 0px 0px;
-    background-size: 192%;
-    height: 65px;
-    width: 140px; }
+.community {
+  text-align: center; }
+  .community a {
+    display: block; }
+    .community a img {
+      width: 300px; }
 
 .gallery-click {
   margin-bottom: 10px;
@@ -654,20 +635,21 @@ body {
   font-size: 16px; }
 
 .orly {
-  float: right; }
+  float: right;
+  width: 50%; }
 
 .section-submissions .cm_gray_top {
   display: none; }
 
 .stupid-badges {
   margin-bottom: 25px;
-  height: 10pc;
+  text-align: center;
   width: 100%; }
   .stupid-badges a {
-    float: left;
-    margin-right: 8.07%; }
-  .stupid-badges :first-child {
-    margin-left: 8.07%; }
+    display: inline-block;
+    margin-right: 8%; }
+  .stupid-badges :last-child {
+    margin-right: 0; }
 
 .after-float {
   clear: both; }
@@ -701,6 +683,9 @@ body {
 .contact-submit {
   margin-top: 10px; }
 
+.contact-form textarea {
+  resize: vertical; }
+
 .form-thanks {
   display: none;
   text-align: center; }
@@ -724,7 +709,10 @@ body {
   font-size: 22px;
   text-align: center;
   margin-top: 10px; }
-  .callout a {
+
+.callout-button-container {
+  text-align: center; }
+  .callout-button-container .callout-button {
     font-size: 22px;
     font-weight: bold; }
 
@@ -750,3 +738,40 @@ body {
     text-align: center; }
     .footer .number a {
       color: #57534a; }
+
+@media only screen and (max-width: 1013px) {
+  #links {
+    margin: auto;
+    width: 462px; } }
+@media only screen and (max-width: 830px) {
+  .content {
+    width: 95%; } }
+@media only screen and (max-width: 620px) {
+  .testimonial-content img {
+    height: 20%;
+    width: auto; }
+  .testimonial-content p {
+    margin-left: 77px; }
+
+  .stupid-badges a {
+    margin-right: 3px; } }
+@media only screen and (max-width: 500px) {
+  .testimonial-content .testimonial-image {
+    width: 100px;
+    margin: auto; }
+    .testimonial-content .testimonial-image img {
+      height: 100px;
+      width: auto; }
+  .testimonial-content p {
+    clear: left;
+    margin: 5px; }
+
+  #links {
+    margin: auto;
+    width: 225px; }
+
+  .footer p.joseph, .footer p.number, .footer p.email {
+    font-size: 12px;
+    clear: both;
+    float: none;
+    text-align: center; } }
