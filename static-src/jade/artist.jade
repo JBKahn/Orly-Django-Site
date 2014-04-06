@@ -5,12 +5,21 @@
 | {{ block.super }}
 .site
     .content
-        <img src="{% static "img/orly.jpg" %}" alt="" class="orly">
         .about
-            h3 Name
-            p Orly Kahn-Waldman
+            h2 Awards &amp; Mentions
+            div.stupid-badges
+                a.wedding_wire-brides_choice(href='http://www.weddingwire.com/reviews/orly-kahn-waldman-makeup-artist-toronto/c2b2135f004abcb6.html', target='_blank')
+                a.wedding_wire-rated(href='http://www.weddingwire.com/reviews/orly-kahn-waldman-makeup-artist-toronto/c2b2135f004abcb6.html', target='_blank')
+                a.wedding_wire-couples_choice(href='http://www.weddingwire.com/reviews/orly-kahn-waldman-makeup-artist-toronto/c2b2135f004abcb6.html', target='_blank')
+            p 
+                | Reviewed by 
+                a(href="http://beautyofficials.com/343/guest-look-orly-waldmans-glowing-bridal-look/", target='_blank') BeautyOfficials.com
+            p 
+                | Wedding reviewed at 
+                a(href="http://www.weddingbells.ca/real-weddings/a-glamorous-urban-wedding-in-toronto/", target='_blank') WeddingBells.ca
         .about
-            h3 About Me
+            h2 Orly Golda Kahn-Waldman
+            <img src="{% static "img/orly.jpg" %}" alt="" class="orly">
             p
                 | Orly is a certified Makeup Artist with over 10 years experience in the wedding industry. Her love for makeup artistry began as a little girl when she became fascinated with the special effects makeup on Buffy the Vampire Slayer. This led to her working on an independent film, Punch, as the lead makeup artist at the age of 17. Eager to pursue a career in the field, Orly attended to enhance her knowledge in the beauty industry. While studying, she quickly fell in love with bridal makeup.
             p
@@ -22,10 +31,7 @@
             p
                 | Orly specializes in luxury bridal makeup but is available for special events of all kinds i.e. bar/bat-mitzvahs, bridal showers, individual or group makeup lessons, and entertainment industry events.
 
-        div.stupid-badges
-          a.wedding_wire-rated(href='http://www.weddingwire.com/reviews/orly-kahn-waldman-makeup-artist-toronto/c2b2135f004abcb6.html', target='_blank')
-          a.wedding_wire-couples_choice(href='http://www.weddingwire.com/reviews/orly-kahn-waldman-makeup-artist-toronto/c2b2135f004abcb6.html', target='_blank')
-          a.wedding_wire-brides_choice(href='http://www.weddingwire.com/reviews/orly-kahn-waldman-makeup-artist-toronto/c2b2135f004abcb6.html', target='_blank')
-          a.weddingful-featured(href='https://weddingful.com/toronto/hair-makeup-spa', target='_blank')
+
+
 
 | {% endblock %}

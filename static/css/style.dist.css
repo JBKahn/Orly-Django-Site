@@ -614,6 +614,10 @@ body {
       display: block;
       margin-right: 5px; }
 
+.about h2, .community h2 {
+  font-variant: small-caps;
+  text-align: center;
+  margin-bottom: 25px; }
 .about h3, .community h3 {
   font-variant: small-caps; }
 .about p, .community p {
@@ -656,14 +660,14 @@ body {
   display: none; }
 
 .stupid-badges {
-  margin-top: 25px;
+  margin-bottom: 25px;
   height: 10pc;
   width: 100%; }
   .stupid-badges a {
     float: left;
-    margin-right: 1.93%; }
-  .stupid-badges:first-child {
-    margin-left: 1.93%; }
+    margin-right: 8.07%; }
+  .stupid-badges :first-child {
+    margin-left: 8.07%; }
 
 .after-float {
   clear: both; }
@@ -687,13 +691,6 @@ body {
   width: 158px;
   display: block;
   background-position-x: -335px; }
-
-.weddingful-featured {
-  background: url("../img/orly_awards.png") no-repeat;
-  height: 158px;
-  width: 158px;
-  display: block;
-  background-position-x: -497px; }
 
 .submit-form {
   margin-top: 10px; }
