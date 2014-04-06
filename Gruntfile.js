@@ -41,7 +41,7 @@ module.exports = function(grunt) {
                     {expand: true, flatten: true, src: ['bower_components/font-awesome/fonts/*'], dest: 'static/fonts/', filter: 'isFile'},
                     {expand: true, flatten: true, src: ['bower_components/blueimp-gallery/img/*'], dest: 'static/img/', filter: 'isFile'},
                     {expand: true, flatten: true, src: ['bower_components/blueimp-bootstrap-image-gallery/img/*'], dest: 'static/img/', filter: 'isFile'},
-
+                    {expand: true, flatten: true, src: ['bower_components/jquery/dist/jquery.min.map'], dest: 'static/js/', filter: 'isFile'},
                 ]
             }
         },
