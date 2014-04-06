@@ -4125,8 +4125,13 @@ function setCSRF() {
     });
 }
 
-function submitForm(url) {
+function showFormThanks() {
+    $('.form-thanks').show();
+}
+
+function submitContactForm(url) {
   $('.has-error').removeClass('has-error');
+  $('.contact-submit').addClass('disabled');
   $.ajax({
     url: url,
     type: 'POST',
@@ -4144,6 +4149,9 @@ function submitForm(url) {
         for (var key in data.responseJSON.errors) {
            $('#' + key).parent().addClass('has-error');
         }
+        $('.contact-submit').removeClass('disabled');
+  }).done(function (data, textStatus, jqXHR) {
+    $('.full-contact-form').fadeOut("slow", showFormThanks)
   });
 }
 

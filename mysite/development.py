@@ -5,6 +5,7 @@ import os
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = ['static']
+STATIC_ROOT = "sitestatic"
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',

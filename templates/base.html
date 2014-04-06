@@ -7,27 +7,32 @@
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Oranienbaum">
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Alex+Brush">{% block body %}
     <body>
-      <div class="site-nav">
-        <div class="header">
-          <h1 class="name">Orly Kahn-Waldman</h1>
-          <h2 class="job">Makeup Artist</h2>
-          <div class="navigation">
-            {% for page in pages %}
-            <a href="{{ page.path }}" class="btn {% if page.name == current_page_name %}active{% endif %}">{{ page.name }}</a>
-            {% endfor%}
+      <div class="site-container">
+        <div class="site-nav">
+          <div class="header">
+            <h1 class="name">Orly Kahn-Waldman</h1>
+            <h2 class="job">Makeup Artist</h2>
+            <div class="navigation">
+              {% for page in pages %}
+              <a href="{{ page.path }}" class="btn {% if page.name == current_page_name %}active{% endif %}">{{ page.name }}</a>
+              {% endfor%}
+            </div>
           </div>
+        </div>{% endblock %}
+        {% block footer %}
+        <div class="footer-holder">
+          <div class="site-footer">
+            <div class="content">
+              <div class="above-footer"><a href="https://www.facebook.com/groups/216243575070185/"><i class="fa fa-facebook-square"></i></a><a href="https://instagram.com/orlymakeupwaldman"><i class="fa fa-instagram"></i></a></div>
+              <div class="footer">
+                <p class="email"><a href="mailto:orly@orlywaldman.com">orly@orlywaldman.com</a></p>
+                <p class="joseph">Designed and written by <a href="http://jbkahn.github.io/" target="_blank">Joseph Kahn</a></p>
+                <p class="number"><a href="tel:416-399-6078">416 399 6078</a></p>
+              </div>
+            </div>
+          </div>{% endblock %}
         </div>
       </div>
-    </body>{% endblock %}
-    {% block footer %}
-    <div class="site-footer">
-      <div class="content">
-        <div style="margin-top: 50px; border-top: 1px solid black" class="footer">
-          <p class="email">orly@orlywaldman.com</p>
-          <p class="joseph">Designed and written by <a href="http://jbkahn.github.io/" target="_blank">Joseph Kahn</a></p>
-          <p class="number">416 399 6078</p>
-        </div>
-      </div>
-    </div>{% endblock %}
+    </body>
   </head>
 </html>

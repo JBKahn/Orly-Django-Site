@@ -4,49 +4,54 @@
 {{ block.super }}
 <div class="site">
   <div class="content">
-    <div class="form-header">
-      <p>Fill out the form below to receive your personalized quote!</p>
-      <p>I look forward to working with you!</p>
-      <p>All inquiries are responded to within 48 hours.</p>
+    <div class="full-contact-form">
+      <div class="form-header">
+        <p>I look forward to working with you!</p>
+        <p>Fill out the form below to receive your personalized quote!</p>
+        <p>All inquiries are responded to within 48 hours.</p>
+      </div>
+      <div class="col-sm-13 contact-form">
+        <form action="#" onsubmit="submitForm();return false" class="form">
+          <div class="row">
+            <div class="col-xs-6 col-md-6 form-group">
+              <input id="name" name="name" placeholder="Name" type="text" autofocus="" class="form-control"/>
+            </div>
+            <div class="col-xs-6 col-md-6 form-group">
+              <input id="email" name="email" placeholder="Email" type="email" class="form-control"/>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6 col-md-6 form-group">
+              <input id="phone_number" name="phone_number" placeholder="Phone Number" type="text" class="form-control"/>
+            </div>
+            <div class="col-xs-6 col-md-6 form-group">
+              <input id="date" name="date" placeholder="Date of Event" type="text" class="form-control"/>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6 col-md-6 form-group">
+              <input id="head_count" name="head_count" placeholder="Number of people that require makeup" type="text" class="form-control"/>
+            </div>
+            <div class="col-xs-6 col-md-6 form-group">
+              <input id="location" name="location" placeholder="Location of Event" type="text" class="form-control"/>
+            </div>
+          </div>
+          <textarea id="additional_info" name="additional_info" placeholder="Additional Information" rows="5" class="form-control"></textarea>
+          <div class="col-xs-13 col-md-13 form-group btns">
+            <button type="submit" class="btn btn-primary pull-right contact-submit">Submit</button>
+          </div>
+        </form>
+      </div>
     </div>
-    <div class="col-sm-13 contact-form">
-      <form action="#" onsubmit="submitContactForm();return false" class="form">
-        <div class="row">
-          <div class="col-xs-6 col-md-6 form-group">
-            <input id="name" name="name" placeholder="Name" type="text" autofocus="" class="form-control"/>
-          </div>
-          <div class="col-xs-6 col-md-6 form-group">
-            <input id="email" name="email" placeholder="Email" type="email" class="form-control"/>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-6 col-md-6 form-group">
-            <input id="phone_number" name="phone_number" placeholder="Phone Number" type="text" class="form-control"/>
-          </div>
-          <div class="col-xs-6 col-md-6 form-group">
-            <input id="date" name="date" placeholder="Date of Event" type="text" class="form-control"/>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-6 col-md-6 form-group">
-            <input id="head_count" name="head_count" placeholder="Number of people that require makeup" type="text" class="form-control"/>
-          </div>
-          <div class="col-xs-6 col-md-6 form-group">
-            <input id="location" name="location" placeholder="Location of Event" type="text" class="form-control"/>
-          </div>
-        </div>
-        <textarea id="additional_info" name="additional_info" placeholder="Additional Information" rows="5" class="form-control"></textarea>
-        <div class="col-xs-13 col-md-13 form-group btns">
-          <button type="submit" class="btn btn-primary pull-right contact-submit">Submit</button>
-        </div>
-      </form>
+    <div class="form-thanks">
+      <P>Thank you for your inquiry. In the meantime, check out facebook or instagram for new photos!</P>
     </div>
   </div>
 </div>
 <script type="text/javascript">
-  function submitContactForm() {
+  function submitForm() {
     setCSRF();
-    return submitForm('{% url "contact:form_submit" %}');
+    return submitContactForm('{% url "contact:form_submit" %}');
   };
   
   

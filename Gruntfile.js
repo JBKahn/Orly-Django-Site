@@ -27,9 +27,19 @@ module.exports = function(grunt) {
                     'bower_components/bootstrap-datepicker/css/datepicker.css',
                     'bower_components/bootstrap/dist/css/bootstrap.min.css',
                     'bower_components/blueimp-gallery/css/blueimp-gallery.min.css',
+                    'bower_components/font-awesome/css/font-awesome.min.css',
                     'static-src-build/css/style.css'
                 ],
                 dest: 'static/css/style.dist.css'
+            }
+        },
+
+        copy: {
+            main: {
+                files: [
+                    // includes files within path
+                    {expand: true, flatten: true, src: ['bower_components/font-awesome/fonts/*'], dest: 'static/fonts/', filter: 'isFile'},
+                ]
             }
         },
 
@@ -136,8 +146,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-jade');
+    grunt.loadNpmTasks('grunt-contrib-copy');
 
-    grunt.registerTask('default', ['sass', 'concat', 'jade']);
+    grunt.registerTask('default', ['sass', 'concat', 'copy', 'jade']);
     grunt.registerTask('dev', ['default', 'connect', 'watch']);
 
 };

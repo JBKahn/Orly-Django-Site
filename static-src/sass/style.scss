@@ -1,15 +1,43 @@
+html {
+    height: 100%;
+}
+body {
+    margin:0;
+    padding:0;
+    height:100%;
+}
+
+.site-container {
+   min-height:100%;
+   position:relative;
+}
+
 .site, .site-nav, .site-footer {
     max-width: 1000px;
     margin: auto;
     background-color: white;
     color: #57534a;
+    font-size: 16px;
 }
 .site {
-    min-height: 960px;
+    // min-height: 700px;
+    padding-bottom:80px;   /* Height of the footer */
+}
+
+.footer-holder {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+}
+.site-footer {
+    .content {
+        padding-bottom: 0px;
+    }
 }
 
 .header {
-    margin-top: 10px;
+    padding-top: 10px;
     h1.name {
         font-family: 'Alex Brush', serif;
         text-align: center;
@@ -26,12 +54,13 @@
         margin: 0 auto 20px;
         a {
             font-variant: small-caps;
+            font-size: 16px;
         }
         .btn {
             color: #57534a;
             font-weight: 900;
-            padding-left: 18px;
-            padding-right: 18px;
+            padding-left: 14.5px;
+            padding-right: 14.5px;
             &:hover {
                 text-decoration: underline;
             }
@@ -117,6 +146,12 @@
     }
 }
 
+.gallery-click {
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 16px;
+}
+
 .orly {
     float: right;
 }
@@ -188,9 +223,14 @@
     margin-top: 10px;
 }
 
+.form-thanks {
+    display: none;
+    text-align: center;
+}
+
 .testimonial {
     margin: 10px 0 0 0;
-    width: 75%;
+    width: 50%;
     float: left;
     img {
         float:left;
@@ -199,20 +239,41 @@
         border-radius: 50%;
     }
     p {
-        font-size: 20px;
+        font-size: 16px;
         font-style: italic;
+        margin-left: 110px;
     }
 }
 .callout {
     font-style: italic;
-    font-size: 20px;
-    width: 22%;
-    float: right;
+    font-size: 22px;
+    text-align: center;
     margin-top: 10px;
+    a {
+        font-size: 22px;
+        font-weight: bold;
+    }
 }
+
+.above-footer {
+    margin-top: 50px;
+    i {
+        font-size: 30px;
+        color: #57534a;
+    }
+    a {
+        margin-right: 3px;
+    }
+}
+
 .footer {
+    border-top: 1px solid black;
+    margin: 0px auto;
     .email {
         float: left;
+        a {
+            color: #57534a;
+        }
     }
     .joseph {
         float: right;
@@ -220,5 +281,8 @@
     }
     .number {
         text-align: center;
+        a {
+            color: #57534a;
+        }
     }
 }

@@ -5,36 +5,39 @@
 
 .site
   .content
-    .form-header
-      p Fill out the form below to receive your personalized quote!
-      p I look forward to working with you!
-      p All inquiries are responded to within 48 hours.
-    .col-sm-13.contact-form
-      form.form(action='#', onsubmit='submitContactForm();return false')
-        .row
-          .col-xs-6.col-md-6.form-group
-            input#name.form-control(name='name', placeholder='Name', type='text', autofocus='')
-          .col-xs-6.col-md-6.form-group
-            input#email.form-control(name='email', placeholder='Email', type='email')
-        .row
-          .col-xs-6.col-md-6.form-group
-            input#phone_number.form-control(name='phone_number', placeholder='Phone Number', type='text')
-          .col-xs-6.col-md-6.form-group
-            input#date.form-control(name='date', placeholder='Date of Event', type='text')
-        .row
-          .col-xs-6.col-md-6.form-group
-            input#head_count.form-control(name='head_count', placeholder='Number of people that require makeup', type='text')
-          .col-xs-6.col-md-6.form-group
-            input#location.form-control(name='location', placeholder='Location of Event', type='text')
-        textarea#additional_info.form-control(name='additional_info', placeholder='Additional Information', rows='5')
-        .col-xs-13.col-md-13.form-group.btns
-          button.btn.btn-primary.pull-right.contact-submit(type='submit') Submit
+    .full-contact-form
+      .form-header
+        p I look forward to working with you!
+        p Fill out the form below to receive your personalized quote!
+        p All inquiries are responded to within 48 hours.
+      .col-sm-13.contact-form
+        form.form(action='#', onsubmit='submitForm();return false')
+          .row
+            .col-xs-6.col-md-6.form-group
+              input#name.form-control(name='name', placeholder='Name', type='text', autofocus='')
+            .col-xs-6.col-md-6.form-group
+              input#email.form-control(name='email', placeholder='Email', type='email')
+          .row
+            .col-xs-6.col-md-6.form-group
+              input#phone_number.form-control(name='phone_number', placeholder='Phone Number', type='text')
+            .col-xs-6.col-md-6.form-group
+              input#date.form-control(name='date', placeholder='Date of Event', type='text')
+          .row
+            .col-xs-6.col-md-6.form-group
+              input#head_count.form-control(name='head_count', placeholder='Number of people that require makeup', type='text')
+            .col-xs-6.col-md-6.form-group
+              input#location.form-control(name='location', placeholder='Location of Event', type='text')
+          textarea#additional_info.form-control(name='additional_info', placeholder='Additional Information', rows='5')
+          .col-xs-13.col-md-13.form-group.btns
+            button.btn.btn-primary.pull-right.contact-submit(type='submit') Submit
+    .form-thanks
+        P Thank you for your inquiry. In the meantime, check out facebook or instagram for new photos!
 
 
 script(type='text/javascript').
-  function submitContactForm() {
+  function submitForm() {
     setCSRF();
-    return submitForm('{% url "contact:form_submit" %}');
+    return submitContactForm('{% url "contact:form_submit" %}');
   };
   
 

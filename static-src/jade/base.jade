@@ -11,20 +11,27 @@ html(lang="en")
         | {% block body %}
         block body
             body
-                .site-nav
-                    .header
-                        h1.name Orly Kahn-Waldman
-                        h2.job Makeup Artist
-                        .navigation
-                          | {% for page in pages %}
-                          <a href="{{ page.path }}" class="btn {% if page.name == current_page_name %}active{% endif %}">{{ page.name }}</a>
-                          | {% endfor%}
-        | {% endblock %}
-        | {% block footer %}
-        .site-footer
-            .content
-                .footer(style="margin-top: 50px; border-top: 1px solid black")
-                    p.email orly@orlywaldman.com
-                    p.joseph Designed and written by <a href="http://jbkahn.github.io/" target="_blank">Joseph Kahn</a>
-                    p.number 416 399 6078
-        | {% endblock %}
+                .site-container
+                    .site-nav
+                        .header
+                            h1.name Orly Kahn-Waldman
+                            h2.job Makeup Artist
+                            .navigation
+                              | {% for page in pages %}
+                              <a href="{{ page.path }}" class="btn {% if page.name == current_page_name %}active{% endif %}">{{ page.name }}</a>
+                              | {% endfor%}
+                    | {% endblock %}
+                    | {% block footer %}
+                    .footer-holder
+                        .site-footer
+                            .content
+                                .above-footer
+                                    a(href='https://www.facebook.com/groups/216243575070185/')
+                                        i.fa.fa-facebook-square
+                                    a(href='https://instagram.com/orlymakeupwaldman')
+                                        i.fa.fa-instagram
+                                .footer
+                                    p.email <a href="mailto:orly@orlywaldman.com">orly@orlywaldman.com</a>
+                                    p.joseph Designed and written by <a href="http://jbkahn.github.io/" target="_blank">Joseph Kahn</a>
+                                    p.number <a href="tel:416-399-6078">416 399 6078</a>
+                        | {% endblock %}

@@ -1,5 +1,5 @@
 from django import forms
-from django.core.mail import send_mail
+from django.core.mail import EmailMessage
 from django.conf import settings
 
 
@@ -14,14 +14,14 @@ class ContactForm(forms.Form):
 
     def send_email(self):
         form_data = self.cleaned_data
-        # send email using the self.cleaned_data dictionary
-        send_mail(
-            subject='Website Contact Form',
-            message=self.format_email(form_data),
+        email = EmailMessage(
+            subject='Website Contact Form from {}'.format(form_data.get('name')),
+            body=self.format_email(form_data),
             from_email=settings.EMAIL_HOST_USER,
-            recipient_list=['josephbkahn@gmail.com'],
-            fail_silently=False
+            to=['orly@orlywaldman.com'],
+            headers={'Reply-To': form_data.get('email')}
         )
+        email.send(fail_silently=False)
 
     def format_email(self, data):
-       return "Name: {name}\nEmail: {email}\nPhone Number: {phone_number}\nDate: {date}\nHead Count: {head_count}\nLocation: {location}\nAdditional Information: {additional_info}".format(**data)
+        return "Name: {name}\nEmail: {email}\nPhone Number: {phone_number}\nDate: {date}\nHead Count: {head_count}\nLocation: {location}\nAdditional Information: {additional_info}".format(**data)
