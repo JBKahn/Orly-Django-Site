@@ -9,8 +9,10 @@
       .review-content
         | {% if review.thumbnail_width %}
         span(style!="background:url({% static review.thumbnail_path %}) no-repeat; background-position:0px -{{ review.thumbnail_offset_top }}px;width:{{ review.thumbnail_width }}px;height:{{ review.thumbnail_height }}px;" alt="{{ review.author }}" class="review-image")
-        | {% endif %}
+        p.review-text.review-with-picture {{ review.text | safe }}
+        | {% else %}
         p.review-text {{ review.text | safe }}
+        | {% endif %}
       | {% if review.author %}
       p – {{ review.author }}
       | {% endif %}

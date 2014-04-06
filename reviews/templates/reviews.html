@@ -6,8 +6,9 @@
 <div class="site">
   <div class="content">{% for review in reviews %}
     <div class="review">
-      <div class="review-content">{% if review.thumbnail_width %}<span style="background:url({% static review.thumbnail_path %}) no-repeat; background-position:0px -{{ review.thumbnail_offset_top }}px;width:{{ review.thumbnail_width }}px;height:{{ review.thumbnail_height }}px;" alt="{{ review.author }}" class="review-image"></span>{% endif %}
-        <p class="review-text">{{ review.text | safe }}</p>
+      <div class="review-content">{% if review.thumbnail_width %}<span style="background:url({% static review.thumbnail_path %}) no-repeat; background-position:0px -{{ review.thumbnail_offset_top }}px;width:{{ review.thumbnail_width }}px;height:{{ review.thumbnail_height }}px;" alt="{{ review.author }}" class="review-image"></span>
+        <p class="review-text review-with-picture">{{ review.text | safe }}</p>{% else %}
+        <p class="review-text">{{ review.text | safe }}</p>{% endif %}
       </div>{% if review.author %}
       <p>– {{ review.author }}</p>{% endif %}
     </div>{% endfor %}
