@@ -1,13 +1,12 @@
 Django website for my sister
 ============================
 
-Written based on the requirements of her business as well as giving me the ability to code a django project from the ground up.
+About
+-----
 
-Stuff to do:
-- Allow portraits to re refreshed via management command.
-- Create review pictures.
-- Polish pages.
-- Add footer.
+My sister is a makeup artist and currently uses a cheesy make-it-yourself website. I agreed to make one for her and customize it to her liking. This is the result.
+
+Aditionally, I made all of the often chaning elements (pictures and reviews) managable through the admin.
 
 
 Setup
