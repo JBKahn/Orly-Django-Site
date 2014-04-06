@@ -39,6 +39,9 @@ module.exports = function(grunt) {
                 files: [
                     // includes files within path
                     {expand: true, flatten: true, src: ['bower_components/font-awesome/fonts/*'], dest: 'static/fonts/', filter: 'isFile'},
+                    {expand: true, flatten: true, src: ['bower_components/blueimp-gallery/img/*'], dest: 'static/img/', filter: 'isFile'},
+                    {expand: true, flatten: true, src: ['bower_components/blueimp-bootstrap-image-gallery/img/*'], dest: 'static/img/', filter: 'isFile'},
+
                 ]
             }
         },
