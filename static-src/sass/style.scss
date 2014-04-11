@@ -126,6 +126,9 @@ body {
         display: block;
         img {
             width: 300px;
+            &.tamaratemes {
+                background-image: url('http://www.tamaratemes.com/wp-content/themes/reaction/assets/images/theme/backgrounds/bg-pattern.png');
+            }
         }
     }
 }

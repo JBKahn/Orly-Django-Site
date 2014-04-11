@@ -628,6 +628,8 @@ body {
     display: block; }
     .community a img {
       width: 300px; }
+      .community a img.tamaratemes {
+        background-image: url("http://www.tamaratemes.com/wp-content/themes/reaction/assets/images/theme/backgrounds/bg-pattern.png"); }
 
 .gallery-click {
   margin-bottom: 10px;

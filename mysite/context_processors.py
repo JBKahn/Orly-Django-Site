@@ -10,9 +10,9 @@ def navigation(request):
         {"name": "Bridal Portfolio", "path": reverse('portfolio:portfolio')},
         {"name": "Reviews", "path": reverse('reviews:reviews')},
         # {"name": "Services", "path": reverse('services:services')},
-        {"name": "FX Portfolio", "path": reverse('special_effects:portfolio')},
         {"name": "The Artist", "path": reverse('artist:about')},
         {"name": "Contact", "path": reverse('contact:form')},
         {"name": "Community", "path": reverse('community:community')},
+        {"name": "FX Portfolio", "path": reverse('special_effects:portfolio')},
     ]
     return {"pages": pages}
