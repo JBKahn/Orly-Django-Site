@@ -1,5 +1,6 @@
 import os
 
+from django.contrib.staticfiles.templatetags.staticfiles import static
 from django.core.files.uploadedfile import SimpleUploadedFile
 from django.db import models
 
@@ -124,7 +125,7 @@ class Thumbnail(models.Model):
         return ''
 
     def format_thumbnail(self):
-        return u'<img src="/%s" />' % '/'.join(self.thumbnail.url.split('/'))
+        return u'<img src="{}" />'.format(static('img/' + self.thumbnail.url.split('/')[-1]))
     format_thumbnail.allow_tags = True
 
     def resize_thumbnail(self):
