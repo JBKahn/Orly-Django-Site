@@ -4,6 +4,9 @@ from django.dispatch.dispatcher import receiver
 
 
 class SpecialEffects(Portfolio):
+    class Meta:
+        ordering = ['position']
+
     def get_thumbnail_sprite(self):
         return 'special_effects'
 
