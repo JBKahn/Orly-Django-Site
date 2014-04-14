@@ -14,6 +14,9 @@ class Sprite(models.Model):
     image = models.ImageField(upload_to=STATIC_ROOT + '/img', null=True, blank=True)
     name = models.CharField(max_length=50, null=False, blank=False)
 
+    def __unicode__(self):
+        return self.name
+
     def generate(self):
         spriteitems = []
         if self.bridalportfolio_set.exists():
