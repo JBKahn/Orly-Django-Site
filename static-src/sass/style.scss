@@ -122,8 +122,12 @@ body {
 
 .community {
     text-align: center;
+    h3 {
+        margin: 20px 0px;
+    }
     a {
         display: block;
+        margin: 20px 0;
         img {
             width: 300px;
             &.tamaratemes {
@@ -132,6 +136,17 @@ body {
         }
     }
 }
+
+.half {
+    width: 49%;
+    display: inline-block;
+    float: left;
+}
+
+.community-section {
+    min-height: 450px;
+}
+
 
 .gallery-click {
     margin-bottom: 10px;
