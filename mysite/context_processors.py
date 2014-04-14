@@ -8,7 +8,7 @@ def navigation(request):
     pages = [
         {"name": "Home", "path": reverse('home:home_page')},
         {"name": "Bridal Portfolio", "path": reverse('portfolio:portfolio')},
-        {"name": "Reviews", "path": reverse('reviews:reviews')},
+        {"name": "Testimonials", "path": reverse('reviews:reviews')},
         # {"name": "Services", "path": reverse('services:services')},
         {"name": "The Artist", "path": reverse('artist:about')},
         {"name": "Contact", "path": reverse('contact:form')},

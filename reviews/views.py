@@ -10,7 +10,7 @@ class ReviewView(TemplateView):
     template_name = 'reviews.html'
 
     def get_context_data(self, **kwargs):
-        return {"current_page_name": "Reviews", "reviews": self.get_reviews()}
+        return {"current_page_name": "Testimonials", "reviews": self.get_reviews()}
 
     def get_reviews(self):
         return Sprite.objects.get(name='reviews').get_sprite_data()
