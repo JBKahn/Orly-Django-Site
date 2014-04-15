@@ -5,13 +5,26 @@
 | {{ block.super }}
 .site
     .content
-        .about
-            h2 Awards &amp; Mentions
+        .about.artist
+            h2 Orly Kahn-Waldman
+            <img src="{% static "img/orly.png" %}" alt="" class="orly">
+            p
+                | Orly is a certified Makeup Artist with over 10 years experience in the wedding industry. Her love for makeup artistry began as a little girl when she became fascinated with the special effects makeup on Buffy the Vampire Slayer. This led to her working on an independent film, Punch, as the lead makeup artist at the age of 17. Eager to pursue a career in the field, Orly attended various courses to enhance her knowledge in the beauty industry. While studying, she quickly fell in love with bridal makeup.
+            p
+                | She has perfected her services for women of every skin tone and type and has since been awarded the Best for Brides award by weddingwire.com in 2013 and the Couples Choice award by weddingwire.com in 2014. 
+            p 
+                | Orly only uses eminent brands to ensure superior results! Her kit is equipped with brands such as MAC, Makeup Forever, NARS, Laura Mercier, Dior, and more!
+            p
+                | From immaculate skin, to lovely lips, engaging eyes to a blushing bride – Orly knows how to make you confident enough to own the spotlight. Orlys work has been featured on Breakfast Television and bridal shows throughout GTA, so you can add yours to her list of famous faces!
+            p
+                | Orly specializes in luxury bridal makeup but is available for special events of all kinds i.e. bar/bat-mitzvahs, bridal showers, individual or group makeup lessons, and entertainment industry events.
+        .about.awards
+            .title
+                h2 Awards <br> &amp; <br> Mentions
             div.stupid-badges
                 a.wedding_wire-brides_choice(href='http://www.weddingwire.com/reviews/orly-kahn-waldman-makeup-artist-toronto/c2b2135f004abcb6.html', target='_blank')
                 a.wedding_wire-rated(href='http://www.weddingwire.com/reviews/orly-kahn-waldman-makeup-artist-toronto/c2b2135f004abcb6.html', target='_blank')
                 a.wedding_wire-couples_choice(href='http://www.weddingwire.com/reviews/orly-kahn-waldman-makeup-artist-toronto/c2b2135f004abcb6.html', target='_blank')
-            div.stupid-badges
                 a(href='http://www.weddingsforher.ca/', target='_blank')
                     <img src="{% static "img/wedding_Soiree.png" %}" alt="" class="wedding Soiree">
             p 
@@ -27,22 +40,5 @@
             p
                 | As seen on 
                 a(href="http://www.bride.ca/", target='_blank') Bride.ca
-            p 
-        .about
-            h2 Orly Kahn-Waldman
-            <img src="{% static "img/orly.png" %}" alt="" class="orly">
-            p
-                | Orly is a certified Makeup Artist with over 10 years experience in the wedding industry. Her love for makeup artistry began as a little girl when she became fascinated with the special effects makeup on Buffy the Vampire Slayer. This led to her working on an independent film, Punch, as the lead makeup artist at the age of 17. Eager to pursue a career in the field, Orly attended various courses to enhance her knowledge in the beauty industry. While studying, she quickly fell in love with bridal makeup.
-            p
-                | She has perfected her services for women of every skin tone and type and has since been awarded the Best for Brides award by weddingwire.com in 2013 and the Couples Choice award by weddingwire.com in 2014. 
-            p 
-                | Orly only uses eminent brands to ensure superior results! Her kit is equipped with brands such as MAC, Makeup Forever, NARS, Laura Mercier, Dior, and more!
-            p
-                | From immaculate skin, to lovely lips, engaging eyes to a blushing bride – Orly knows how to make you confident enough to own the spotlight. Orlys work has been featured on Breakfast Television and bridal shows throughout GTA, so you can add yours to her list of famous faces!
-            p
-                | Orly specializes in luxury bridal makeup but is available for special events of all kinds i.e. bar/bat-mitzvahs, bridal showers, individual or group makeup lessons, and entertainment industry events.
-
-
-
 
 | {% endblock %}

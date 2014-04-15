@@ -106,6 +106,22 @@ body {
         }
     }
 }
+
+.about {
+    display: inline-block;
+    .title {
+        text-align: center;
+    }
+    &.awards {
+        float: right;
+        width: 35%;
+    }
+    &.artist {
+        width: 64%;
+        float: left;
+    }
+}
+
 .about, .community {
     h2 {
         font-variant: small-caps;
@@ -170,11 +186,7 @@ body {
     text-align: center;
     width: 100%;
     a {
-        display: inline-block;
-        margin-right: 8%;
-    }
-    & :last-child {
-        margin-right: 0;
+        margin: 10px auto;
     }
 }
 
@@ -202,7 +214,7 @@ body {
     height: 158px;
     width: 158px;
     display: block;
-    background-position-x: -335px;
+    background-position-x: -334px;
 }
 
 .submit-form {
@@ -319,15 +331,17 @@ and (max-width: 620px) {
             margin-left: 77px;
         }
     }
-    .stupid-badges {
-        a {
-            margin-right: 3px;
-        }
-    }
 }
 
 @media only screen
 and (max-width: 500px) {
+    .about.awards {
+        float: none;
+        width: 100%;
+    }
+    .about.artist {
+        width: 100%;
+    }
     .testimonial-content {
         .testimonial-image {
             width: 100px;
