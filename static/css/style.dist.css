@@ -619,7 +619,6 @@ body {
   .about .title {
     text-align: center; }
   .about.awards {
-    float: right;
     width: 35%; }
   .about.artist {
     width: 64%;

@@ -2363,11 +2363,10 @@ if ( typeof define === 'function' && define.amd ) {
 
 // ----- get style ----- //
 
-var defView = document.defaultView;
-
-var getStyle = defView && defView.getComputedStyle ?
+var getComputedStyle = window.getComputedStyle;
+var getStyle = getComputedStyle ?
   function( elem ) {
-    return defView.getComputedStyle( elem, null );
+    return getComputedStyle( elem, null );
   } :
   function( elem ) {
     return elem.currentStyle;
@@ -2879,7 +2878,7 @@ if ( typeof define === 'function' && define.amd ) {
 })( window );
 
 /*!
- * Outlayer v1.1.10
+ * Outlayer v1.2.0
  * the brains and guts of a layout library
  * MIT license
  */
@@ -2999,7 +2998,7 @@ function Outlayer( element, options ) {
   this.element = element;
 
   // options
-  this.options = extend( {}, this.options );
+  this.options = extend( {}, this.constructor.defaults );
   this.option( options );
 
   // add id for Outlayer.getFromElement
@@ -3020,7 +3019,7 @@ Outlayer.namespace = 'outlayer';
 Outlayer.Item = Item;
 
 // default options
-Outlayer.prototype.options = {
+Outlayer.defaults = {
   containerStyle: {
     position: 'relative'
   },
@@ -3028,6 +3027,7 @@ Outlayer.prototype.options = {
   isOriginLeft: true,
   isOriginTop: true,
   isResizeBound: true,
+  isResizingContainer: true,
   // item options
   transitionDuration: '0.4s',
   hiddenStyle: {
@@ -3314,6 +3314,13 @@ Outlayer.prototype._positionItem = function( item, x, y, isInstant ) {
  * i.e. size the container
  */
 Outlayer.prototype._postLayout = function() {
+  this.resizeContainer();
+};
+
+Outlayer.prototype.resizeContainer = function() {
+  if ( !this.options.isResizingContainer ) {
+    return;
+  }
   var size = this._getContainerSize();
   if ( size ) {
     this._setContainerMeasure( size.width, true );
@@ -3322,6 +3329,7 @@ Outlayer.prototype._postLayout = function() {
 };
 
 /**
+ * Sets width or height of container if returned
  * @returns {Object} size
  *   @param {Number} width
  *   @param {Number} height
@@ -3531,7 +3539,9 @@ Outlayer.prototype.bindResize = function() {
  * Unbind layout to window resizing
  */
 Outlayer.prototype.unbindResize = function() {
-  eventie.unbind( window, 'resize', this );
+  if ( this.isResizeBound ) {
+    eventie.unbind( window, 'resize', this );
+  }
   this.isResizeBound = false;
 };
 
@@ -3556,17 +3566,25 @@ Outlayer.prototype.onresize = function() {
 // debounced, layout on resize
 Outlayer.prototype.resize = function() {
   // don't trigger if size did not change
-  var size = getSize( this.element );
-  // check that this.size and size are there
-  // IE8 triggers resize on body size change, so they might not be
-  var hasSizes = this.size && size;
-  if ( hasSizes && size.innerWidth === this.size.innerWidth ) {
+  // or if resize was unbound. See #9
+  if ( !this.isResizeBound || !this.needsResizeLayout() ) {
     return;
   }
 
   this.layout();
 };
 
+/**
+ * check if layout is needed post layout
+ * @returns Boolean
+ */
+Outlayer.prototype.needsResizeLayout = function() {
+  var size = getSize( this.element );
+  // check that this.size and size are there
+  // IE8 triggers resize on body size change, so they might not be
+  var hasSizes = this.size && size;
+  return hasSizes && size.innerWidth !== this.size.innerWidth;
+};
 
 // -------------------------- methods -------------------------- //
 
@@ -3750,12 +3768,6 @@ Outlayer.data = function( elem ) {
   return id && instances[ id ];
 };
 
-// --------------------------  -------------------------- //
-
-// copy an object on the Outlayer prototype to new object
-function copyOutlayerProto( obj, property ) {
-  obj.prototype[ property ] = extend( {}, Outlayer.prototype[ property ] );
-}
 
 // -------------------------- create Outlayer class -------------------------- //
 
@@ -3777,10 +3789,11 @@ Outlayer.create = function( namespace, options ) {
   // set contructor, used for namespace and Item
   Layout.prototype.constructor = Layout;
 
-  // copy default options so Outlayer.options don't get touched
-  copyOutlayerProto( Layout, 'options' );
+  Layout.defaults = extend( {}, Outlayer.defaults );
   // apply new options
-  extend( Layout.prototype.options, options );
+  extend( Layout.defaults, options );
+  // keep prototype.settings for backwards compatibility (Packery v1.2.0)
+  Layout.prototype.settings = {};
 
   Layout.namespace = namespace;
 
