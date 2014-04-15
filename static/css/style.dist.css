@@ -734,8 +734,7 @@ body {
 .callout {
   font-style: italic;
   font-size: 22px;
-  text-align: center;
-  margin-top: 10px; }
+  text-align: center; }
 
 .callout-button-container {
   text-align: center; }
