@@ -623,6 +623,12 @@ body {
   .about.artist {
     width: 64%;
     float: left; }
+    .about.artist p {
+      text-align: justify; }
+    .about.artist .orly {
+      margin-left: 10px;
+      float: right;
+      width: 50%; }
 
 .about h2, .community h2 {
   font-variant: small-caps;
@@ -657,10 +663,6 @@ body {
   margin-bottom: 10px;
   text-align: center;
   font-size: 16px; }
-
-.orly {
-  float: right;
-  width: 50%; }
 
 .section-submissions .cm_gray_top {
   display: none; }
