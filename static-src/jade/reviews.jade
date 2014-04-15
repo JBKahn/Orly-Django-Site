@@ -14,7 +14,8 @@
         p.review-text {{ review.text | safe }}
         | {% endif %}
       | {% if review.author %}
-      p – {{ review.author }}
+      .review-author
+          p – {{ review.author }}
       | {% endif %}
     | {% endfor %}
 

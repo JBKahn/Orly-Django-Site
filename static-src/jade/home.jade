@@ -6,24 +6,24 @@
 .site
   .content
     img.home(src!='{% static "img/home_page_makeup.png" %}', alt='Applying Makeup', width='700', height='466')
-    .home-below-picture
+    .callout-container
       p.callout To recieve your free personalized quote for your special day
       .callout-button-container
         a.btn.btn-primary.callout-button(href!='{% url "contact:form" %}') Contact Me Today!
-      .testimonial
-        .testimonial-content
-          .testimonial-image
-            img(src!='{% static "img/amy_thumbnail.jpg" %}', alt='Amy', width='100', height='100')
-          p
-            | "Not only did you make me look beautiful, Orly, but I felt it! You are so professional and yet so personable, attentive and the way you listen to what your clients want is priceless. From the bottom of my heart, thank you."
-          p – Amy C.
-      .testimonial.testimonial-right
-        .testimonial-content
-          .testimonial-image
-            img(src!='{% static "img/baily_thumbnail.jpg" %}', alt='Amy', width='100', height='100')
-          p
-            | "Orly did an amazing job, she was a pleasure to have around, and provided a much needed calmness to a very hectic day! Orly was incredibly flexible and managed to make a group of very fussy ladies extremely happy with their make up, accommodating to each persons personal style."
-          p – Baily
+    .testimonial
+      .testimonial-content
+        .testimonial-image
+          img(src!='{% static "img/amy_thumbnail.jpg" %}', alt='Amy', width='100', height='100')
+        p
+          | "Not only did you make me look beautiful, Orly, but I felt it! You are so professional and yet so personable, attentive and the way you listen to what your clients want is priceless. From the bottom of my heart, thank you."
+        p – Amy C.
+    .testimonial.testimonial-right
+      .testimonial-content
+        .testimonial-image
+          img(src!='{% static "img/baily_thumbnail.jpg" %}', alt='Amy', width='100', height='100')
+        p
+          | "Orly did an amazing job, she was a pleasure to have around, and provided a much needed calmness to a very hectic day! Orly was incredibly flexible and managed to make a group of very fussy ladies extremely happy with their make up, accommodating to each persons personal style."
+        p – Baily
 
 
 | {% endblock %}

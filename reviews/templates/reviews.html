@@ -10,7 +10,9 @@
         <p class="review-text review-with-picture">{{ review.text | safe }}</p>{% else %}
         <p class="review-text">{{ review.text | safe }}</p>{% endif %}
       </div>{% if review.author %}
-      <p>– {{ review.author }}</p>{% endif %}
+      <div class="review-author">
+        <p>– {{ review.author }}</p>
+      </div>{% endif %}
     </div>{% endfor %}
   </div>
 </div>
