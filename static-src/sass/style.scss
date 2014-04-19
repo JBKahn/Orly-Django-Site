@@ -171,6 +171,12 @@ body {
 
 .community-section {
     min-height: 450px;
+    .community img {
+        width: 45%;
+    }
+    .community.half img {
+        width: 90%;
+    }
 }
 
 
