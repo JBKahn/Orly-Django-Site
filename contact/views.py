@@ -34,4 +34,4 @@ class JBKahmContactFormViewSubmit(generics.CreateAPIView):
             form.send_email()
             return Response({}, status=200)
         else:
-            return Response({"errors": form.errors}, status=422)
+            return Response({"errors": form.errors, "data": form_data}, status=422)
