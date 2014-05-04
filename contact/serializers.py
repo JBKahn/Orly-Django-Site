@@ -9,3 +9,10 @@ class ContactSerializer(serializers.Serializer):
     head_count = serializers.IntegerField(min_value=0, max_value=500, required=False)
     location = serializers.CharField(max_length=100, required=False)
     additional_info = serializers.CharField(max_length=500, required=False)
+
+
+class JBKahnContactSerializer(serializers.Serializer):
+    name = serializers.CharField(max_length=80)
+    email = serializers.EmailField()
+    subject = serializers.CharField(required=True)
+    message = serializers.DateField(required=True)

@@ -2,7 +2,7 @@ from django.views.generic import TemplateView
 from rest_framework import generics
 from rest_framework.response import Response
 
-from contact.serializers import ContactSerializer
+from contact.serializers import ContactSerializer, JBKahnContactSerializer
 from contact.forms import ContactForm, JBKahnContactForm
 
 
@@ -28,7 +28,7 @@ class ContactFormViewSubmit(generics.CreateAPIView):
 class JBKahmContactFormViewSubmit(generics.CreateAPIView):
 
     def post(self, request, *args, **kwargs):
-        form_data = ContactSerializer(self.request.DATA).data
+        form_data = JBKahnContactSerializer(self.request.DATA).data
         form = JBKahnContactForm(form_data)
         if form.is_valid():
             form.send_email()
