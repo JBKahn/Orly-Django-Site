@@ -25,3 +25,24 @@ class ContactForm(forms.Form):
 
     def format_email(self, data):
         return "Name: {name}\nEmail: {email}\nPhone Number: {phone_number}\nDate: {date}\nHead Count: {head_count}\nLocation: {location}\nAdditional Information: {additional_info}".format(**data)
+
+
+class JBKahnContactForm(forms.Form):
+    name = forms.CharField(max_length=100)
+    email = forms.EmailField()
+    subject = forms.CharField(required=True)
+    message = forms.CharField(required=True)
+
+    def send_email(self):
+        form_data = self.cleaned_data
+        email = EmailMessage(
+            subject='Website Contact Form from {}'.format(form_data.get('name')),
+            body=self.format_email(form_data),
+            from_email=settings.EMAIL_HOST_USER,
+            to=['josephbkahn@gmail.com'],
+            headers={'Reply-To': form_data.get('email')}
+        )
+        email.send(fail_silently=False)
+
+    def format_email(self, data):
+        return "Name: {name}\nEmail: {email}\nSubject: {subject}\nMessage: {message}".format(**data)
