@@ -9,7 +9,10 @@ class GeneraetSprite(generics.CreateAPIView):
 
     def post(self, request, *args, **kwargs):
         for sprite in Sprite.objects.all():
-            sprite.generate()
+	    try:
+                sprite.generate()
+	    except Exception:
+	        pass
         return Response({}, status=200)
 
 
