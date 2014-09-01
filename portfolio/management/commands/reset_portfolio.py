@@ -14,7 +14,7 @@ class Command(BaseCommand):
         for photo in os.listdir('./portfolio/management/commands'):
             if photo[-3:] not in ['png', 'jpg'] and photo[-4:] != 'jpeg':
                 continue
-            f = open(os.getcwd() + '/portfolio/management/commands/' + photo, 'r')
+            f = open('portfolio/management/commands/' + photo, 'r')
             f.seek(0)
             BridalPortfolio.objects.create(imgfile=File(f))
         Sprite.objects.get(name='bridal_portfolio').generate()

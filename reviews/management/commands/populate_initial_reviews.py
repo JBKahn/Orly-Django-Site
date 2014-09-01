@@ -3,6 +3,7 @@ from django.core.management.base import BaseCommand
 from django.core.files import File
 from reviews.models import ClientReview
 from core.models import Sprite
+from PIL import Image
 
 
 class Command(BaseCommand):
@@ -14,7 +15,11 @@ class Command(BaseCommand):
             if 'image' in review:
                 image_file = open(os.getcwd() + '/reviews/management/commands/' + review.get('image'), 'r')
                 image_file.seek(0)
-                ClientReview.objects.create(name=review.get('author'), text=review.get('text'), thumbnail=File(image_file))
+		# import ipdb; ipdb.set_trace()
+	        # test = ClientReview.objects.create(name=review.get('author'), text=review.get('text'), thumbnail=File(image_file))
+	        test = ClientReview.objects.create(name=review.get('author'), text=review.get('text'))
+		test.thumbnail.name = 'reviews/management/commands/' + review.get('image')
+		test.save()
             else:
                 ClientReview.objects.create(name=review.get('author'), text=review.get('text'))
         review_sprite = Sprite.objects.get(name='reviews')

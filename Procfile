@@ -1,1 +1,1 @@
-web: sudo python2.7 manage.py runserver 0.0.0.0:8004
+web: PYTHONUNBUFFERED=true python manage.py runserver 0.0.0.0:8004

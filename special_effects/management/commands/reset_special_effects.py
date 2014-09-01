@@ -14,7 +14,7 @@ class Command(BaseCommand):
         for photo in os.listdir('./special_effects/management/commands'):
             if photo[-3:] not in ['png', 'jpg'] and photo[-4:] != 'jpeg':
                 continue
-            f = open(os.getcwd() + '/special_effects/management/commands/' + photo, 'r')
+            f = open('special_effects/management/commands/' + photo, 'r')
             f.seek(0)
             SpecialEffects.objects.create(imgfile=File(f))
         Sprite.objects.get(name='special_effects').generate()

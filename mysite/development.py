@@ -3,9 +3,12 @@ import os
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
-STATIC_URL = '/static/'
+DIRNAME = os.path.join(os.path.dirname(__file__), '../../')
+
+STATIC_URL = '/sitestatic/'
 STATICFILES_DIRS = ['static']
-STATIC_ROOT = "sitestatic"
+STATIC_ROOT = 'sitestatic'
+# MEDIA_ROOT = 'media'
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
