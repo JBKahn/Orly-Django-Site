@@ -10,5 +10,10 @@ https://docs.djangoproject.com/en/1.6/howto/deployment/wsgi/
 import os
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mysite.settings")
 
+PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
+
+import newrelic.agent
+newrelic.agent.initialize(os.path.join(PROJECT_ROOT, '../newrelic.ini'))
+
 from django.core.wsgi import get_wsgi_application
 application = get_wsgi_application()

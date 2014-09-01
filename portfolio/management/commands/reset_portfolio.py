@@ -11,7 +11,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         BridalPortfolio.objects.all().delete()
-        for photo in os.listdir('./portfolio/management/commands'):
+        for photo in os.listdir('/home3/orlywald/src/Orly-Django-Site-master/portfolio/management/commands'):
             if photo[-3:] not in ['png', 'jpg'] and photo[-4:] != 'jpeg':
                 continue
             f = open('portfolio/management/commands/' + photo, 'r')

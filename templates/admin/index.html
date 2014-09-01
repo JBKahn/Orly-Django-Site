@@ -14,9 +14,9 @@
 <script src="{% static "js/requirements.dist.js" %}" type="text/javascript"></script>
 <div id="content-main">
 <button type="button" onclick="generateSprites()" class="btn btn-primary orly-button" style="width:200px;">Generate Sprites</button><br><br>
-<button type="button" onclick="resetPortfolio()" class="btn btn-primary orly-button" style="width:200px;">Reset Portfolio</button><br><br>
-<button type="button" onclick="resetSpecialEffects()" class="btn btn-primary orly-button" style="width:200px;">Reset Special Effects</button><br><br>
-<button type="button" onclick="resetReviews()" class="btn btn-primary orly-button" style="width:200px;">Reset Reviews</button><br><br>
+<button type="button" onclick="resetPortfolio()" class="btn disabled btn-primary orly-button" style="width:200px;">Reset Portfolio</button><br><br>
+<button type="button" onclick="resetSpecialEffects()" class="btn disabled btn-primary orly-button" style="width:200px;">Reset Special Effects</button><br><br>
+<button type="button" onclick="resetReviews()" class="btn disabled btn-primary orly-button" style="width:200px;">Reset Reviews</button><br><br>
 
 {% if app_list %}
     {% for app in app_list %}
