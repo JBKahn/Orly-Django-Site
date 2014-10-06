@@ -7,11 +7,11 @@ from django.db import models
 from cStringIO import StringIO
 from PIL import Image
 
-from mysite.settings import STATICFILES_DIRS
+from mysite.settings import STATIC_ROOT
 
 
 class Sprite(models.Model):
-    image = models.ImageField(upload_to=STATICFILES_DIRS[0] + '/img', null=True, blank=True)
+    image = models.ImageField(upload_to=STATIC_ROOT + '/img', null=True, blank=True)
     name = models.CharField(max_length=50, null=False, blank=False)
 
     def __unicode__(self):
@@ -115,7 +115,7 @@ class Sprite(models.Model):
 
 
 class Thumbnail(models.Model):
-    thumbnail = models.ImageField(upload_to=STATICFILES_DIRS[0] + '/img', max_length=500, blank=True, null=True)
+    thumbnail = models.ImageField(upload_to=STATIC_ROOT + '/img', max_length=500, blank=True, null=True)
     position = models.PositiveSmallIntegerField("Position")
     thumbnail_sprite_offset_top = models.PositiveSmallIntegerField(default=0)
     sprite = models.ForeignKey(Sprite)
@@ -197,7 +197,7 @@ class Thumbnail(models.Model):
 
 class Portfolio(Thumbnail):
     title = models.CharField(max_length=50, null=True, blank=True)
-    imgfile = models.ImageField(upload_to=STATICFILES_DIRS[0] + '/img')
+    imgfile = models.ImageField(upload_to=STATIC_ROOT + '/img')
 
     class Meta:
         abstract = True
