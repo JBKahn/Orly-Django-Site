@@ -10,6 +10,9 @@ STATICFILES_DIRS = ['static']
 STATIC_ROOT = 'sitestatic'
 # MEDIA_ROOT = 'media'
 
+# NEVER EVER EVER EVER DO THIS AGAIN.
+CORE_UPLOAD_TO = 'STATIC_ROOT'
+
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'django.contrib.staticfiles.finders.FileSystemFinder',
