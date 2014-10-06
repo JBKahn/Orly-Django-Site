@@ -1,5 +1,6 @@
 import os
 
+from django.conf import settings
 from django.core.files import File
 from django.core.management.base import BaseCommand
 from core.models import Sprite
@@ -11,7 +12,11 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         BridalPortfolio.objects.all().delete()
-        for photo in os.listdir('/home3/orlywald/src/Orly-Django-Site-master/portfolio/management/commands'):
+        if settings.DEBUG:
+            photo_dir = 'portfolio/management/commands/'
+        else:
+            photo_dir = '/home3/orlywald/src/Orly-Django-Site-master/portfolio/management/commands'
+        for photo in os.listdir(photo_dir):
             if photo[-3:] not in ['png', 'jpg'] and photo[-4:] != 'jpeg':
                 continue
             f = open('portfolio/management/commands/' + photo, 'r')
