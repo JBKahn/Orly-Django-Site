@@ -151,7 +151,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-jade');
     grunt.loadNpmTasks('grunt-contrib-copy');
 
-    grunt.registerTask('default', ['sass', 'concat', 'copy', 'jade']);
+    grunt.registerTask('default', ['sass', 'concat', 'copy']);
     grunt.registerTask('dev', ['default', 'connect', 'watch']);
 
 };
