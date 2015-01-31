@@ -1,0 +1,453 @@
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	deleted:    ../portfolio/management/commands/0060__Liat_and_Yossi.jpg
+	deleted:    ../portfolio/management/commands/0065__Liat_and_Yossi.jpg
+	deleted:    ../portfolio/management/commands/0103__Liat_and_Yossi.jpg
+	deleted:    ../portfolio/management/commands/1.png
+	deleted:    ../portfolio/management/commands/1013413_10101166940668921_990566507_n.jpg
+	deleted:    ../portfolio/management/commands/10368233_10201899648126785_2076153325246534472_n.jpg
+	deleted:    ../portfolio/management/commands/10522751_10201899669527320_1564745971641624897_n.jpg
+	deleted:    ../portfolio/management/commands/10600597_10201899656446993_1689654553044311047_n.jpg
+	deleted:    ../portfolio/management/commands/10612925_10201905641516616_8443117739851139912_n.jpg
+	deleted:    ../portfolio/management/commands/10616118_10201899683647673_8624705728398695924_n.jpg
+	deleted:    ../portfolio/management/commands/1074362_503744583033154_609991108_o.jpg
+	deleted:    ../portfolio/management/commands/1077721_503744409699838_1704492851_o.jpg
+	deleted:    ../portfolio/management/commands/10big.png
+	deleted:    ../portfolio/management/commands/1268386_10200728554991872_195728736_o.jpg
+	deleted:    ../portfolio/management/commands/12_big.jpeg
+	deleted:    ../portfolio/management/commands/1383292_10201899673047408_7732814255531948823_n.jpg
+	deleted:    ../portfolio/management/commands/1401993_10153515197125034_294295662_o.jpg
+	deleted:    ../portfolio/management/commands/1404603_10153515154745034_87247527_o.jpg
+	deleted:    ../portfolio/management/commands/1456807_10153514653720034_398424871_n.jpg
+	deleted:    ../portfolio/management/commands/1459973_10153514653545034_418912671_n.jpg
+	deleted:    ../portfolio/management/commands/1476065_616616531727733_2075681822_n.png
+	deleted:    ../portfolio/management/commands/1487696_10153510310365034_1070172757_o.jpg
+	deleted:    ../portfolio/management/commands/14big.jpeg
+	deleted:    ../portfolio/management/commands/1517630_10202793579344683_2063124824_n.jpg
+	deleted:    ../portfolio/management/commands/1521722_10202793579024675_713281936_n.jpg
+	deleted:    ../portfolio/management/commands/155238_10150097596278000_7010914_n.jpg
+	deleted:    ../portfolio/management/commands/16big.jpeg
+	deleted:    ../portfolio/management/commands/18big.jpeg
+	deleted:    ../portfolio/management/commands/2.png
+	deleted:    ../portfolio/management/commands/20big.png
+	deleted:    ../portfolio/management/commands/23big.png
+	deleted:    ../portfolio/management/commands/24030_1223541602617_3006428_n.jpg
+	deleted:    ../portfolio/management/commands/264266_3443168491902_1700497258_n.jpg
+	deleted:    ../portfolio/management/commands/281382_1768758752705_4991082_n.jpg
+	deleted:    ../portfolio/management/commands/296405_1951155272504_1350621273_n.jpg
+	deleted:    ../portfolio/management/commands/298860_2021044500122_1358512323_n.jpg
+	deleted:    ../portfolio/management/commands/2big.jpeg
+	deleted:    ../portfolio/management/commands/431074_2603043129293_1044854014_n.jpg
+	deleted:    ../portfolio/management/commands/47972_10151536491463291_2000356080_n.jpg
+	deleted:    ../portfolio/management/commands/4big.jpeg
+	deleted:    ../portfolio/management/commands/532366_3664451503839_2121934468_n.jpg
+	deleted:    ../portfolio/management/commands/545201_2682454194520_99313813_n.jpg
+	deleted:    ../portfolio/management/commands/550823_10151276083339993_485742568_n.jpg
+	deleted:    ../portfolio/management/commands/555398_10151546371579108_489299204_n.jpg
+	deleted:    ../portfolio/management/commands/60390_503743949699884_2097487186_n.jpg
+	deleted:    ../portfolio/management/commands/644594_10151432500503718_375295084_n.jpg
+	deleted:    ../portfolio/management/commands/66124_4017640733349_1873161167_n.jpg
+	deleted:    ../portfolio/management/commands/705138_10100263462502710_1470397431_o.jpg
+	deleted:    ../portfolio/management/commands/75974_470581636313725_486993529_n.jpg
+	deleted:    ../portfolio/management/commands/7big.png
+	deleted:    ../portfolio/management/commands/8593_4719221592432_1419348463_n.jpg
+	deleted:    ../portfolio/management/commands/971625_4426886684826_1571004274_n.jpg
+	deleted:    ../portfolio/management/commands/9big.png
+	deleted:    ../portfolio/management/commands/CrisitnaChristopher-225.jpg
+	deleted:    ../portfolio/management/commands/CrisitnaChristopher-254.jpg
+	deleted:    ../portfolio/management/commands/DUO_GOOD3.png
+	deleted:    ../portfolio/management/commands/Gold_0020.jpg
+	deleted:    ../portfolio/management/commands/IMG_20131014_154659.jpg
+	deleted:    ../portfolio/management/commands/IMG_20131015_174324.jpg
+	deleted:    ../portfolio/management/commands/_12A6653.jpg
+	deleted:    ../portfolio/management/commands/a.png
+	deleted:    ../portfolio/management/commands/a1.jpg
+	deleted:    ../portfolio/management/commands/a2.jpg
+	deleted:    ../portfolio/management/commands/a3.jpg
+	deleted:    ../portfolio/management/commands/a4.jpg
+	deleted:    ../portfolio/management/commands/a5.jpg
+	deleted:    ../portfolio/management/commands/a6.jpg
+	deleted:    ../portfolio/management/commands/a7.jpg
+	deleted:    ../portfolio/management/commands/as.jpg
+	deleted:    ../portfolio/management/commands/as2.jpg
+	deleted:    ../portfolio/management/commands/as3.jpg
+	deleted:    ../portfolio/management/commands/b.png
+	deleted:    ../portfolio/management/commands/baily2.jpg
+	deleted:    ../portfolio/management/commands/c.png
+	deleted:    ../portfolio/management/commands/christina.png
+	deleted:    ../portfolio/management/commands/d.png
+	deleted:    ../portfolio/management/commands/duo_good2.png
+	deleted:    ../portfolio/management/commands/e.png
+	deleted:    ../portfolio/management/commands/edita.jpg
+	deleted:    ../portfolio/management/commands/edita2.jpg
+	deleted:    ../portfolio/management/commands/edita3.jpg
+	deleted:    ../portfolio/management/commands/edita4.jpg
+	deleted:    ../portfolio/management/commands/elize.png
+	deleted:    ../portfolio/management/commands/elize2.png
+	deleted:    ../portfolio/management/commands/favicon.ico
+	deleted:    ../portfolio/management/commands/genevieve.jpg
+	deleted:    ../portfolio/management/commands/k1.png
+	deleted:    ../portfolio/management/commands/k2.png
+	deleted:    ../portfolio/management/commands/kelley.jpg
+	deleted:    ../portfolio/management/commands/kira_makeup_orly.png
+	deleted:    ../portfolio/management/commands/loading.gif
+	deleted:    ../portfolio/management/commands/meg.png
+	modified:   ../portfolio/management/commands/reset_portfolio.py
+	deleted:    ../portfolio/management/commands/shawna.png
+	deleted:    ../portfolio/management/commands/steph_b.jpg
+	deleted:    ../portfolio/management/commands/toronto-wedding-photography-liberty-village-14.jpg
+	deleted:    ../portfolio/management/commands/toronto-wedding-photography-liberty-village-8.jpg
+	deleted:    ../portfolio/management/commands/unnamed4.jpg
+	deleted:    ../portfolio/management/commands/unnameddgd.jpg
+	deleted:    ../portfolio/management/commands/yael.jpg
+	deleted:    ../reviews/management/commands/amy.jpg
+	deleted:    ../reviews/management/commands/baily.jpg
+	deleted:    ../reviews/management/commands/genevieve.jpg
+	deleted:    ../reviews/management/commands/haizel.png
+	deleted:    ../reviews/management/commands/jenn p.png
+	deleted:    ../reviews/management/commands/kelley.jpg
+	deleted:    ../reviews/management/commands/laura.jpg
+	modified:   ../reviews/management/commands/populate_initial_reviews.py
+	deleted:    ../reviews/management/commands/rachel.jpg
+	deleted:    ../reviews/management/commands/sandy.jpg
+	deleted:    ../reviews/management/commands/sondra.jpg
+	deleted:    ../reviews/management/commands/steph.jpg
+	deleted:    ../reviews/management/commands/stephanie.jpg
+	deleted:    ../reviews/management/commands/yael.jpg
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	../backup/
+	../db_backup.json
+	../important images
+	../portfolio/management/commands/img/
+	../reviews/management/commands/img.backup/
+	../reviews/management/commands/img/
+	img/0060__Liat_and_Yossi_EST15oO.jpg
+	img/0060__Liat_and_Yossi_EST15oO_thumbnail.jpg
+	img/0065__Liat_and_Yossi_h7fjEm9.jpg
+	img/0065__Liat_and_Yossi_h7fjEm9_thumbnail.jpg
+	img/0103__Liat_and_Yossi_UBDCr1C.jpg
+	img/0103__Liat_and_Yossi_UBDCr1C_thumbnail.jpg
+	img/1013413_10101166940668921_990566507_n_cS9L8Sa.jpg
+	img/1013413_10101166940668921_990566507_n_cS9L8Sa_thumbnail.jpg
+	img/10155446_10101613308678851_2145639924888731125_n.jpg
+	img/10155446_10101613308678851_2145639924888731125_n_thumbnail.jpg
+	img/10341684_10202076068377181_1319474150878211599_n.jpg
+	img/10341684_10202076068377181_1319474150878211599_n_thumbnail.jpg
+	img/10352149_10201934623841156_5681888914728231849_n.jpg
+	img/10352149_10201934623841156_5681888914728231849_n_thumbnail.jpg
+	img/10368233_10201899648126785_2076153325246534472_n_IL8nJPK.jpg
+	img/10368233_10201899648126785_2076153325246534472_n_thumbnail_FvSQ4Dg.jpg
+	img/10409005_10201952640651565_2372794975568079248_n.jpg
+	img/10409005_10201952640651565_2372794975568079248_n_thumbnail.jpg
+	img/10417452_10201546089728046_5681221589799111758_n.jpg
+	img/10417452_10201546089728046_5681221589799111758_n_thumbnail.jpg
+	img/10447507_10201561874562657_9048700307525367908_n.jpg
+	img/10447507_10201561874562657_9048700307525367908_n_thumbnail.jpg
+	img/10468445_10202104747694146_2637820106855982123_n.jpg
+	img/10468445_10202104747694146_2637820106855982123_n_thumbnail.jpg
+	img/10487326_10152300647522717_7999234094685868203_n.jpg
+	img/10487326_10152300647522717_7999234094685868203_n_thumbnail.jpg
+	img/10511427_10154706567565515_5047829679442090299_o.jpg
+	img/10511427_10154706567565515_5047829679442090299_o_thumbnail.jpg
+	img/10522751_10201899669527320_1564745971641624897_n_Ynv904Z.jpg
+	img/10522751_10201899669527320_1564745971641624897_n_thumbnail_SE6t9VI.jpg
+	img/10527744_10202123348599157_4930349822787604822_n.jpg
+	img/10527744_10202123348599157_4930349822787604822_n_thumbnail.jpg
+	img/10534302_10152300647602717_7670948373902110189_n.jpg
+	img/10534302_10152300647602717_7670948373902110189_n_thumbnail.jpg
+	img/10537484_10152332880642654_258104399283249235_o.jpg
+	img/10537484_10152332880642654_258104399283249235_o_thumbnail.jpg
+	img/10583944_10201782349754399_4145150083535382938_n.jpg
+	img/10583944_10201782349754399_4145150083535382938_n_thumbnail.jpg
+	img/10600597_10201899656446993_1689654553044311047_n_5BuA3d9.jpg
+	img/10600597_10201899656446993_1689654553044311047_n_thumbnail_JR4u4UV.jpg
+	img/10612656_10202123347759136_1044761687620614617_n.jpg
+	img/10612656_10202123347759136_1044761687620614617_n_thumbnail.jpg
+	img/10612925_10201905641516616_8443117739851139912_n_thumbnail_TC0snRb.jpg
+	img/10612925_10201905641516616_8443117739851139912_n_tzVoTkz.jpg
+	img/10616118_10201899683647673_8624705728398695924_n_thumbnail_ZoDes7O.jpg
+	img/10616118_10201899683647673_8624705728398695924_n_yguiLC4.jpg
+	img/10616402_10201966020066042_7604524006103175169_n.jpg
+	img/10616402_10201966020066042_7604524006103175169_n_thumbnail.jpg
+	img/10623041_10201952644051650_90550278617605623_n.jpg
+	img/10623041_10201952644051650_90550278617605623_n_thumbnail.jpg
+	img/10636118_10202123349999192_4097062148255722977_n.jpg
+	img/10636118_10202123349999192_4097062148255722977_n_thumbnail.jpg
+	img/10646854_10202193539193804_4368408114636938117_n.jpg
+	img/10646854_10202193539193804_4368408114636938117_n_thumbnail.jpg
+	img/10646863_10201972019416022_5311540427550388971_n.jpg
+	img/10646863_10201972019416022_5311540427550388971_n_thumbnail.jpg
+	img/10668811_10154706565200515_7516340405067839121_o.jpg
+	img/10668811_10154706565200515_7516340405067839121_o_thumbnail.jpg
+	img/10704175_10152265743170951_2090757081934390578_n.jpg
+	img/10704175_10152265743170951_2090757081934390578_n_thumbnail.jpg
+	img/1074362_503744583033154_609991108_o_sBiv5dQ.jpg
+	img/1074362_503744583033154_609991108_o_sBiv5dQ_thumbnail.jpg
+	img/1077721_503744409699838_1704492851_o_HB9Ruc6.jpg
+	img/1077721_503744409699838_1704492851_o_HB9Ruc6_thumbnail.jpg
+	img/10big_NRUpMff.png
+	img/10big_NRUpMff_thumbnail.png
+	img/1233992_10202074456096875_6331801665309898028_n.jpg
+	img/1233992_10202074456096875_6331801665309898028_n_thumbnail.jpg
+	img/1268386_10200728554991872_195728736_o_TNMocRW.jpg
+	img/1268386_10200728554991872_195728736_o_TNMocRW_thumbnail.jpg
+	img/12_big_BmmVFkD.jpeg
+	img/12_big_BmmVFkD_thumbnail.jpg
+	img/1383292_10201899673047408_7732814255531948823_n_25MXSvd.jpg
+	img/1383292_10201899673047408_7732814255531948823_n_thumbnail_cKX2r6A.jpg
+	img/1401993_10153515197125034_294295662_o_6GlHIT5.jpg
+	img/1401993_10153515197125034_294295662_o_6GlHIT5_thumbnail.jpg
+	img/1404603_10153515154745034_87247527_o_ZccFZcq.jpg
+	img/1404603_10153515154745034_87247527_o_ZccFZcq_thumbnail.jpg
+	img/1453335_10201952715053425_14217349470213694_n.jpg
+	img/1453335_10201952715053425_14217349470213694_n_thumbnail.jpg
+	img/1456807_10153514653720034_398424871_n_Gpxvftj.jpg
+	img/1456807_10153514653720034_398424871_n_Gpxvftj_thumbnail.jpg
+	img/1459973_10153514653545034_418912671_n_OfmcBBu.jpg
+	img/1459973_10153514653545034_418912671_n_OfmcBBu_thumbnail.jpg
+	img/1476065_616616531727733_2075681822_n_Y2SsqFH.png
+	img/1476065_616616531727733_2075681822_n_Y2SsqFH_thumbnail.png
+	img/1487696_10153510310365034_1070172757_o_0Z5q5yG.jpg
+	img/1487696_10153510310365034_1070172757_o_0Z5q5yG_thumbnail.jpg
+	img/14big_q23vKkL.jpeg
+	img/14big_q23vKkL_thumbnail.jpg
+	img/1517630_10202793579344683_2063124824_n_bmkq6bA.jpg
+	img/1517630_10202793579344683_2063124824_n_bmkq6bA_thumbnail.jpg
+	img/1521722_10202793579024675_713281936_n_RUQ3GUy.jpg
+	img/1521722_10202793579024675_713281936_n_RUQ3GUy_thumbnail.jpg
+	img/155238_10150097596278000_7010914_n_KWjwuoR.jpg
+	img/155238_10150097596278000_7010914_n_KWjwuoR_thumbnail.jpg
+	img/1688167_10202076078617437_3085087373453485921_n.jpg
+	img/1688167_10202076078617437_3085087373453485921_n_thumbnail.jpg
+	img/16big_RbdiDL7.jpeg
+	img/16big_RbdiDL7_thumbnail.jpg
+	img/1795209_10154706566715515_6040255515112386566_o.jpg
+	img/1795209_10154706566715515_6040255515112386566_o_thumbnail.jpg
+	img/18big_n2LQUMO.jpeg
+	img/18big_n2LQUMO_thumbnail.jpg
+	img/1908415_10152332884797654_4544612280168197025_n.jpg
+	img/1908415_10152332884797654_4544612280168197025_n_thumbnail.jpg
+	img/1957759_10154706573025515_5096129246879811860_o.jpg
+	img/1957759_10154706573025515_5096129246879811860_o_thumbnail.jpg
+	img/1_r2HavJb.png
+	img/1_r2HavJb_thumbnail.png
+	img/20big_kygYQ0L.png
+	img/20big_kygYQ0L_thumbnail.png
+	img/23big_5DLLqWZ.png
+	img/23big_5DLLqWZ_thumbnail.png
+	img/24030_1223541602617_3006428_n_3kKojxl.jpg
+	img/24030_1223541602617_3006428_n_3kKojxl_thumbnail.jpg
+	img/264266_3443168491902_1700497258_n_JVaIJSN.jpg
+	img/264266_3443168491902_1700497258_n_JVaIJSN_thumbnail.jpg
+	img/281382_1768758752705_4991082_n_3fv912k.jpg
+	img/281382_1768758752705_4991082_n_3fv912k_thumbnail.jpg
+	img/296405_1951155272504_1350621273_n_SK8fdj5.jpg
+	img/296405_1951155272504_1350621273_n_SK8fdj5_thumbnail.jpg
+	img/298860_2021044500122_1358512323_n_TQtnhkh.jpg
+	img/298860_2021044500122_1358512323_n_TQtnhkh_thumbnail.jpg
+	img/2_YBbknxw.png
+	img/2_YBbknxw_thumbnail.png
+	img/2big_2frh0xA.jpeg
+	img/2big_2frh0xA_thumbnail.jpg
+	img/431074_2603043129293_1044854014_n_0gM43pg.jpg
+	img/431074_2603043129293_1044854014_n_0gM43pg_thumbnail.jpg
+	img/47972_10151536491463291_2000356080_n_X5cPzcm.jpg
+	img/47972_10151536491463291_2000356080_n_X5cPzcm_thumbnail.jpg
+	img/4big_5dr8GfZ.jpeg
+	img/4big_5dr8GfZ_thumbnail.jpg
+	img/532366_3664451503839_2121934468_n_qk1NnSZ.jpg
+	img/532366_3664451503839_2121934468_n_qk1NnSZ_thumbnail.jpg
+	img/545201_2682454194520_99313813_n_eFbnjdl.jpg
+	img/545201_2682454194520_99313813_n_eFbnjdl_thumbnail.jpg
+	img/550823_10151276083339993_485742568_n_FwR9vrc.jpg
+	img/550823_10151276083339993_485742568_n_FwR9vrc_thumbnail.jpg
+	img/555398_10151546371579108_489299204_n_t7tjRS3.jpg
+	img/555398_10151546371579108_489299204_n_t7tjRS3_thumbnail.jpg
+	img/60390_503743949699884_2097487186_n_wIg0KdX.jpg
+	img/60390_503743949699884_2097487186_n_wIg0KdX_thumbnail.jpg
+	img/644594_10151432500503718_375295084_n_2ueRl4l.jpg
+	img/644594_10151432500503718_375295084_n_2ueRl4l_thumbnail.jpg
+	img/66124_4017640733349_1873161167_n_3vGpzXL.jpg
+	img/66124_4017640733349_1873161167_n_3vGpzXL_thumbnail.jpg
+	img/705138_10100263462502710_1470397431_o_kb7UqnD.jpg
+	img/705138_10100263462502710_1470397431_o_kb7UqnD_thumbnail.jpg
+	img/75974_470581636313725_486993529_n_VMKEv1A.jpg
+	img/75974_470581636313725_486993529_n_VMKEv1A_thumbnail.jpg
+	img/7big_bD3QpzX.png
+	img/7big_bD3QpzX_thumbnail.png
+	img/8593_4719221592432_1419348463_n_hZ54uYG.jpg
+	img/8593_4719221592432_1419348463_n_hZ54uYG_thumbnail.jpg
+	img/971625_4426886684826_1571004274_n_CXmcQuB.jpg
+	img/971625_4426886684826_1571004274_n_CXmcQuB_thumbnail.jpg
+	img/9big_W4dtJUH.png
+	img/9big_W4dtJUH_thumbnail.png
+	img/ASHLEY.jpg
+	img/ASHLEY_thumbnail.jpg
+	img/Christina_thumbnail.png
+	img/Christina_thumbnail_0iEb4ZO.png
+	img/Christina_thumbnail_0iEb4ZO_thumbnail.png
+	img/Christina_thumbnail_0iEb4ZO_thumbnail_thumbnail.png
+	img/Christina_thumbnail_thumbnail.png
+	img/CrisitnaChristopher-225_uWMeuBB.jpg
+	img/CrisitnaChristopher-225_uWMeuBB_thumbnail.jpg
+	img/CrisitnaChristopher-254_sDppQBp.jpg
+	img/CrisitnaChristopher-254_sDppQBp_thumbnail.jpg
+	img/DSC_2876-1000x667.jpg
+	img/DSC_2876-1000x667_thumbnail.jpg
+	img/DSC_2877-1000x667.jpg
+	img/DSC_2877-1000x667_thumbnail.jpg
+	img/DSC_2925-1000x666.jpg
+	img/DSC_2925-1000x666_thumbnail.jpg
+	img/DUO_GOOD3_etcH3Iy.png
+	img/DUO_GOOD3_etcH3Iy_thumbnail.png
+	img/Gold_0020_KXM895S.jpg
+	img/Gold_0020_KXM895S_thumbnail.jpg
+	img/IMG_20131014_154659_bX9J2Kh.jpg
+	img/IMG_20131014_154659_bX9J2Kh_thumbnail.jpg
+	img/IMG_20131015_174324_Bv5s59g.jpg
+	img/IMG_20131015_174324_Bv5s59g_thumbnail.jpg
+	img/IMG_20140725_175119.jpg
+	img/IMG_20140725_175119_thumbnail.jpg
+	img/Kristen_thumbnail.jpg
+	img/Kristen_thumbnail_2kimN2r.jpg
+	img/Kristen_thumbnail_2kimN2r_thumbnail.jpg
+	img/Kristen_thumbnail_2kimN2r_thumbnail_thumbnail.jpg
+	img/Kristen_thumbnail_thumbnail.jpg
+	img/_12A6653_P9hIJjH.jpg
+	img/_12A6653_P9hIJjH_thumbnail.jpg
+	img/a1_EjdBboY.jpg
+	img/a1_EjdBboY_thumbnail.jpg
+	img/a2_Yh7OSmV.jpg
+	img/a2_Yh7OSmV_thumbnail.jpg
+	img/a3_Wx5Dea8.jpg
+	img/a3_Wx5Dea8_thumbnail.jpg
+	img/a4_Wl3NPPW.jpg
+	img/a4_Wl3NPPW_thumbnail.jpg
+	img/a5_si6nIiO.jpg
+	img/a5_si6nIiO_thumbnail.jpg
+	img/a6_uxdmQer.jpg
+	img/a6_uxdmQer_thumbnail.jpg
+	img/a7_GU0R0ps.jpg
+	img/a7_GU0R0ps_thumbnail.jpg
+	img/a_Tx4vmxJ.png
+	img/a_Tx4vmxJ_thumbnail.png
+	img/amy.png
+	img/amy_3.png
+	img/amy_3_thumbnail.png
+	img/amy_4.png
+	img/amy_4_thumbnail.png
+	img/amy_thumbnail.png
+	img/amy_thumbnail_1_1Qm0lNi.jpg
+	img/as2_J1qWBmQ.jpg
+	img/as2_J1qWBmQ_thumbnail.jpg
+	img/as3_TmDzBwE.jpg
+	img/as3_TmDzBwE_thumbnail.jpg
+	img/as_ZYfiwqj.jpg
+	img/as_ZYfiwqj_thumbnail.jpg
+	img/ashley20and20geoffrey20color20web-19.jpg
+	img/ashley20and20geoffrey20color20web-19_thumbnail.jpg
+	img/ashley_thumbnail.jpg
+	img/ashley_thumbnail_h2UHM95.jpg
+	img/ashley_thumbnail_h2UHM95_thumbnail.jpg
+	img/ashley_thumbnail_h2UHM95_thumbnail_thumbnail.jpg
+	img/ashley_thumbnail_thumbnail.jpg
+	img/b_hOhJaPu.png
+	img/b_hOhJaPu_thumbnail.png
+	img/baily2_JhSLROb.jpg
+	img/baily2_JhSLROb_thumbnail.jpg
+	img/baily_thumbnail_1_hQnPyNp.jpg
+	img/bea3.png
+	img/bea3_thumbnail.png
+	img/bea4.png
+	img/bea4_thumbnail.png
+	img/bridal_portfolio_thumbnail.png
+	img/c_kKTgxdV.png
+	img/c_kKTgxdV_thumbnail.png
+	img/christina_cvHopZ7.png
+	img/christina_cvHopZ7_thumbnail.png
+	img/collage_15.png
+	img/collage_15_thumbnail.png
+	img/d_Yj5stnh.png
+	img/d_Yj5stnh_thumbnail.png
+	img/duo_good2_k4rN5M1.png
+	img/duo_good2_k4rN5M1_thumbnail.png
+	img/e_nSWFANt.png
+	img/e_nSWFANt_thumbnail.png
+	img/edita2_ohLnOgn.jpg
+	img/edita2_thumbnail_vhvApFB.jpg
+	img/edita3_BWGmExw.jpg
+	img/edita3_thumbnail_tjBtv2f.jpg
+	img/edita4_hHDG14I.jpg
+	img/edita4_thumbnail_WeXSing.jpg
+	img/edita_BQYPIKu.jpg
+	img/edita_thumbnail_0e4Ps3N.jpg
+	img/elize2_b6wWSzM.png
+	img/elize2_b6wWSzM_thumbnail.png
+	img/elize_wf7qrsD.png
+	img/elize_wf7qrsD_thumbnail.png
+	img/genevieve_eFk8CNT.jpg
+	img/genevieve_eFk8CNT_thumbnail.jpg
+	img/genevieve_thumbnail_3_pGbnOS9.jpg
+	img/haizel_thumbnail_1_OhScdK4.png
+	img/jenn_p_thumbnail_1_1IuTjQ6.png
+	img/jessica_kline.jpg
+	img/k1_kq7HPam.png
+	img/k1_kq7HPam_thumbnail.png
+	img/k2_zwIyVRX.png
+	img/k2_zwIyVRX_thumbnail.png
+	img/kelley_XmLzoni.jpg
+	img/kelley_XmLzoni_thumbnail.jpg
+	img/kelley_thumbnail_3_WwvUb9H.jpg
+	img/kira_makeup_orly_jHKSuFu.png
+	img/kira_makeup_orly_jHKSuFu_thumbnail.png
+	img/laura_thumbnail_1_17ezZoU.jpg
+	img/meg_EKFEOP9.png
+	img/meg_EKFEOP9_thumbnail.png
+	img/rachel_thumbnail_1_OTtVyU8.jpg
+	img/res_1406322277370.jpg
+	img/res_1406322277370_thumbnail.jpg
+	img/reviews_thumbnail.png
+	img/sandy_thumbnail_1_LXItMxm.jpg
+	img/se1big_1.jpeg
+	img/se1big_1_thumbnail.jpg
+	img/se2big_1.jpeg
+	img/se2big_1_thumbnail.jpg
+	img/se3big_1.jpeg
+	img/se3big_1_thumbnail.jpg
+	img/se4big_1.jpeg
+	img/se4big_1_thumbnail.jpg
+	img/se5big_1.jpeg
+	img/se5big_1_thumbnail.jpg
+	img/se6big_1.jpeg
+	img/se6big_1_thumbnail.jpg
+	img/shawna_cVOIh3y.png
+	img/shawna_cVOIh3y_thumbnail.png
+	img/sondra_thumbnail_1_wLPXquO.jpg
+	img/special_effects_thumbnail.png
+	img/steph_b_VVyeETN.jpg
+	img/steph_b_VVyeETN_thumbnail.jpg
+	img/steph_thumbnail_1_llVQnrA.jpg
+	img/stephanie_thumbnail_1_BoDdIFj.jpg
+	img/toronto-wedding-photography-liberty-village-14_z24mmrM.jpg
+	img/toronto-wedding-photography-liberty-village-14_z24mmrM_thumbnail.jpg
+	img/toronto-wedding-photography-liberty-village-8_dI11BRd.jpg
+	img/toronto-wedding-photography-liberty-village-8_dI11BRd_thumbnail.jpg
+	img/unnamed4_ki9Mxtn.jpg
+	img/unnamed4_ki9Mxtn_thumbnail.jpg
+	img/unnameddgd_egI2JIU.jpg
+	img/unnameddgd_egI2JIU_thumbnail.jpg
+	img/yael_JS67hjF.jpg
+	img/yael_JS67hjF_thumbnail.jpg
+	img/yael_thumbnail_3_ep6kSxF.jpg
+	status.txt
+	../useful portion of backup.json
+
+no changes added to commit (use "git add" and/or "git commit -a")
